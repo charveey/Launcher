@@ -5,7 +5,7 @@ const path   = require('path')
 const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; font-weight: bold')
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
-const dataPath = path.join(sysRoot, '.westeroscraft')
+const dataPath = path.join(sysRoot, '.newhope')
 
 const firstLaunch = !fs.existsSync(dataPath)
 

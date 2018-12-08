@@ -21,7 +21,7 @@
 
 **Támogatott platformok**
 
-Ha a [Releases](https://github.com/WesterosCraftCode/ElectronLauncher/releases) közül töltöd le válaszd ki a számodra megfelelőt!
+Ha a [Releases](https://github.com/pepyta/NewhopeLaunceher/releases) közül töltöd le válaszd ki a számodra megfelelőt!
 
 | Platform | File |
 | -------- | ---- |

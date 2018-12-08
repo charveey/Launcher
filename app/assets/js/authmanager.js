@@ -28,11 +28,8 @@ const loggerSuccess = LoggerUtil('%c[AuthManager]', 'color: #209b07; font-weight
  */
 exports.addAccount = async function(username, password){
     try {
-        const session = await Mojang.authenticate(username, password, ConfigManager.getClientToken())
-        const ret = ConfigManager.addAuthAccount(session.selectedProfile.id, session.accessToken, username, session.selectedProfile.name)
-        if(ConfigManager.getClientToken() == null){
-            ConfigManager.setClientToken(session.clientToken)
-        }
+        //const session = await Mojang.authenticate(username, "", ConfigManager.getClientToken())
+        const ret = ConfigManager.addAuthAccount("", username, username, username)
         ConfigManager.save()
         return ret
     } catch (err){

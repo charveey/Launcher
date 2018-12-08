@@ -11,15 +11,11 @@ const loginCancelContainer  = document.getElementById('loginCancelContainer')
 const loginCancelButton     = document.getElementById('loginCancelButton')
 const loginEmailError       = document.getElementById('loginEmailError')
 const loginUsername         = document.getElementById('loginUsername')
-const loginPasswordError    = document.getElementById('loginPasswordError')
-const loginPassword         = document.getElementById('loginPassword')
-const checkmarkContainer    = document.getElementById('checkmarkContainer')
-const loginRememberOption   = document.getElementById('loginRememberOption')
 const loginButton           = document.getElementById('loginButton')
 const loginForm             = document.getElementById('loginForm')
 
 // Control variables.
-let lu = false, lp = false
+let lu = false
 
 const loggerLogin = LoggerUtil('%c[Login]', 'color: #000668; font-weight: bold')
 
@@ -56,38 +52,17 @@ function shakeError(element){
 function validateEmail(value){
     if(value){
         if(!basicEmail.test(value) && !validUsername.test(value)){
-            showError(loginEmailError, '* Invalid Value')
+            showError(loginEmailError, '* Helytelen érték')
             loginDisabled(true)
             lu = false
         } else {
             loginEmailError.style.opacity = 0
             lu = true
-            if(lp){
-                loginDisabled(false)
-            }
-        }
-    } else {
-        lu = false
-        showError(loginEmailError, '* Required')
-        loginDisabled(true)
-    }
-}
-
-/**
- * Validate that the password field is not empty.
- * 
- * @param {string} value The password value.
- */
-function validatePassword(value){
-    if(value){
-        loginPasswordError.style.opacity = 0
-        lp = true
-        if(lu){
             loginDisabled(false)
         }
     } else {
-        lp = false
-        showError(loginPasswordError, '* Required')
+        lu = false
+        showError(loginEmailError, '* Szükséges!')
         loginDisabled(true)
     }
 }
@@ -97,17 +72,10 @@ loginUsername.addEventListener('focusout', (e) => {
     validateEmail(e.target.value)
     shakeError(loginEmailError)
 })
-loginPassword.addEventListener('focusout', (e) => {
-    validatePassword(e.target.value)
-    shakeError(loginPasswordError)
-})
 
 // Validate input for each field.
 loginUsername.addEventListener('input', (e) => {
     validateEmail(e.target.value)
-})
-loginPassword.addEventListener('input', (e) => {
-    validatePassword(e.target.value)
 })
 
 /**
@@ -129,10 +97,10 @@ function loginDisabled(v){
 function loginLoading(v){
     if(v){
         loginButton.setAttribute('loading', v)
-        loginButton.innerHTML = loginButton.innerHTML.replace('LOGIN', 'LOGGING IN')
+        loginButton.innerHTML = loginButton.innerHTML.replace('BEJELENTKEZÉS', 'BEJELENTKEZÉS...')
     } else {
         loginButton.removeAttribute('loading')
-        loginButton.innerHTML = loginButton.innerHTML.replace('LOGGING IN', 'LOGIN')
+        loginButton.innerHTML = loginButton.innerHTML.replace('BEJELENTKEZÉS...', 'BEJELENTKEZÉS')
     }
 }
 
@@ -145,13 +113,6 @@ function formDisabled(v){
     loginDisabled(v)
     loginCancelButton.disabled = v
     loginUsername.disabled = v
-    loginPassword.disabled = v
-    if(v){
-        checkmarkContainer.setAttribute('disabled', v)
-    } else {
-        checkmarkContainer.removeAttribute('disabled')
-    }
-    loginRememberOption.disabled = v
 }
 
 /**
@@ -253,9 +214,9 @@ loginButton.addEventListener('click', () => {
     // Show loading stuff.
     loginLoading(true)
 
-    AuthManager.addAccount(loginUsername.value, loginPassword.value).then((value) => {
+    AuthManager.addAccount(loginUsername.value).then((value) => {
         updateSelectedAccount(value)
-        loginButton.innerHTML = loginButton.innerHTML.replace('LOGGING IN', 'SUCCESS')
+        loginButton.innerHTML = loginButton.innerHTML.replace('BEJELENTKEZÉS...', 'SIKERES BEJELENTKEZÉS!')
         $('.circle-loader').toggleClass('load-complete')
         $('.checkmark').toggle()
         setTimeout(() => {
@@ -268,11 +229,10 @@ loginButton.addEventListener('click', () => {
                 loginCancelEnabled(false) // Reset this for good measure.
                 loginViewCancelHandler = null // Reset this for good measure.
                 loginUsername.value = ''
-                loginPassword.value = ''
                 $('.circle-loader').toggleClass('load-complete')
                 $('.checkmark').toggle()
                 loginLoading(false)
-                loginButton.innerHTML = loginButton.innerHTML.replace('SUCCESS', 'LOGIN')
+                loginButton.innerHTML = loginButton.innerHTML.replace('SIKERES BEJELENTKEZÉS!', 'BEJELENTKEZÉS')
                 formDisabled(false)
             })
         }, 1000)
