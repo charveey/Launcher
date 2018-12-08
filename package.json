@@ -1,13 +1,13 @@
 {
-  "name": "westeroscraftlauncher",
+  "name": "newhopelauncher",
   "version": "1.2.0",
-  "productName": "WesterosCraft Launcher",
-  "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
+  "productName": "NewHope",
+  "description": "NewHope saját launchere",
+  "author": "Daniel Scalzi (https://github.com/dscalzi/), Gál Péter (https://github.com/pepyta/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/WesterosCraftCode/ElectronLauncher",
+  "homepage": "https://github.com/pepyta/NewHopeLauncher",
   "bugs": {
-    "url": "https://github.com/WesterosCraftCode/ElectronLauncher/issues"
+    "url": "https://github.com/pepyta/NewHopeLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -47,13 +47,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WesterosCraftCode/ElectronLauncher.git"
+    "url": "git+https://github.com/pepyta/NewHopeLauncher.git"
   },
   "build": {
-    "appId": "westeroscraftlauncher",
-    "productName": "WesterosCraft Launcher",
+    "appId": "newhopelauncher",
+    "productName": "NewHope",
     "artifactName": "${productName}.${ext}",
-    "copyright": "Copyright © 2018 WesterosCraft",
+    "copyright": "Copyright © 2018 Daniel Scalzi, Gál Péter",
     "directories": {
       "buildResources": "build",
       "output": "dist"
@@ -81,10 +81,10 @@
     },
     "linux": {
       "target": "AppImage",
-      "maintainer": "Daniel Scalzi",
-      "vendor": "WesterosCraft",
-      "synopsis": "Custom Launcher for WesterosCraft",
-      "description": "Custom launcher which allows users to join WesterosCraft. All mods, configurations, and updates are handled automatically.",
+      "maintainer": "Gál Péter",
+      "vendor": "newhopelauncher",
+      "synopsis": "Saját indító a NewHopehoz",
+      "description": "NewHope saját launchere",
       "category": "Game"
     },
     "deb": {
