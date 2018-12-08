@@ -20,7 +20,7 @@ class ProcessBuilder {
         this.commonDir = ConfigManager.getCommonDirectory()
         this.server = distroServer
         this.versionData = versionData
-        this.forgeData = forgeData
+        this.forgeData = versionData
         this.authUser = authUser
         this.fmlDir = path.join(this.gameDir, 'forgeModList.json')
         this.llDir = path.join(this.gameDir, 'liteloaderModList.json')
