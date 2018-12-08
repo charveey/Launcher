@@ -20,7 +20,7 @@ class ProcessBuilder {
         this.commonDir = ConfigManager.getCommonDirectory()
         this.server = distroServer
         this.versionData = versionData
-        this.forgeData = versionData
+        this.forgeData = forgeData
         this.authUser = authUser
         this.fmlDir = path.join(this.gameDir, 'forgeModList.json')
         this.llDir = path.join(this.gameDir, 'liteloaderModList.json')
@@ -223,7 +223,7 @@ class ProcessBuilder {
             this.forgeData.mainClass]
 
         if(process.platform === 'darwin'){
-            args.unshift('-Xdock:name=NewHope')
+            args.unshift('-Xdock:name=WesterosCraft')
             args.unshift('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
 
