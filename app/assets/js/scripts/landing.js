@@ -440,7 +440,7 @@ const GAME_LAUNCH_REGEX = /^\[.+\]: MinecraftForge .+ Initialized$/
 let aEx
 let serv
 let versionData
-let forgeData
+//let forgeData
 
 let progressListener
 
@@ -584,19 +584,19 @@ function dlAsync(login = true){
                     break
             }
         } else if(m.context === 'validateEverything'){
-
+            console.log(m.result);
             // If these properties are not defined it's likely an error.
-            if(m.result.forgeData == null || m.result.versionData == null){
+            if(m.result.versionData == null){ //m.result.forgeData == null ||
                 loggerLaunchSuite.error('Error during validation:', m.result)
             }
 
-            forgeData = m.result.forgeData
+            //forgeData = m.result.forgeData
             versionData = m.result.versionData
 
             if(login) {
                 const authUser = ConfigManager.getSelectedAccount()
                 loggerLaunchSuite.log(`Sending selected account (${authUser.displayName}) to ProcessBuilder.`)
-                let pb = new ProcessBuilder(serv, versionData, forgeData, authUser)
+                let pb = new ProcessBuilder(serv, versionData, authUser)
                 setLaunchDetails('Launching game..')
 
                 // Attach a temporary listener to the client output.

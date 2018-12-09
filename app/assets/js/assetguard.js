@@ -1615,7 +1615,9 @@ class AssetGuard extends EventEmitter {
         //this.emit('complete', 'download')
         //const forgeData = await this.loadForgeData(server)
     
-        return versionData
+        return {
+            versionData
+        } 
     }
 
     // #endregion
