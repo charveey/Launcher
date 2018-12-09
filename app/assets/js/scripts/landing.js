@@ -584,7 +584,7 @@ function dlAsync(login = true){
                     break
             }
         } else if(m.context === 'validateEverything'){
-            console.log(m.result);
+
             // If these properties are not defined it's likely an error.
             if(m.result.forgeData == null || m.result.versionData == null){
                 loggerLaunchSuite.error('Error during validation:', m.result)

@@ -15,12 +15,12 @@ const logger = LoggerUtil('%c[ProcessBuilder]', 'color: #003996; font-weight: bo
 
 class ProcessBuilder {
 
-    constructor(distroServer, versionData, forgeData, authUser){
+    constructor(distroServer, versionData, "", authUser){
         this.gameDir = path.join(ConfigManager.getInstanceDirectory(), distroServer.getID())
         this.commonDir = ConfigManager.getCommonDirectory()
         this.server = distroServer
         this.versionData = versionData
-        this.forgeData = forgeData
+        //this.forgeData = forgeData
         this.authUser = authUser
         this.fmlDir = path.join(this.gameDir, 'forgeModList.json')
         this.llDir = path.join(this.gameDir, 'liteloaderModList.json')
@@ -220,7 +220,7 @@ class ProcessBuilder {
             '-Djava.library.path=' + tempNativePath,
             '-cp',
             this.classpathArg(mods, tempNativePath).join(process.platform === 'win32' ? ';' : ':'),
-            this.forgeData.mainClass]
+            this.versionData.mainClass]
 
         if(process.platform === 'darwin'){
             args.unshift('-Xdock:name=WesterosCraft')
@@ -240,7 +240,7 @@ class ProcessBuilder {
      * @returns {Array.<string>} An array containing the arguments required by forge.
      */
     _resolveForgeArgs(){
-        const mcArgs = this.forgeData.minecraftArguments.split(' ')
+        const mcArgs = this.versionData.minecraftArguments.split(' ')
         const argDiscovery = /\${*(.*)}/
 
         // Replace the declared variables with their proper values.

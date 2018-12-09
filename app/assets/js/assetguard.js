@@ -1613,13 +1613,9 @@ class AssetGuard extends EventEmitter {
         this.emit('validate', 'files')
         await this.processDlQueues()
         //this.emit('complete', 'download')
-        const forgeData = await this.loadForgeData(server)
+        //const forgeData = await this.loadForgeData(server)
     
-        return {
-            versionData,
-            forgeData
-        }
-
+        return versionData
     }
 
     // #endregion
