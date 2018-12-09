@@ -1,4 +1,4 @@
-<p align="center"><img src="./app/assets/images/NewHopeSealCircle.png" width="150px" height="150px" alt="newhope"></p>
+<p align="center"><img src="./app/assets/images/NewHopeIcon.png" width="150px" height="150px" alt="newhope"></p>
 
 <h1 align="center">NewHope</h1>
 
