@@ -362,10 +362,10 @@ class ProcessBuilder {
         const libs = []
 
         const libArr = this.versionData.libraries
-        console.log(libArr);
         fs.ensureDirSync(tempNativePath)
         for(let i=0; i<libArr.length; i++){
             const lib = libArr[i]
+            
             if(Library.validateRules(lib.rules)){
                 if(lib.natives == null){
                     const dlInfo = lib.downloads
@@ -375,6 +375,7 @@ class ProcessBuilder {
                 } else {
                     // Extract the native library.
                     const extractInst = lib.extract
+                    console.log(lib)
                     const exclusionArr = extractInst.exclude
                     const artifact = lib.downloads.classifiers[lib.natives[Library.mojangFriendlyOS()].replace('${arch}', process.arch.replace('x', ''))]
     
