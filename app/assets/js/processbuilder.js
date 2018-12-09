@@ -362,6 +362,7 @@ class ProcessBuilder {
         const libs = []
 
         const libArr = this.versionData.libraries
+        console.log(libArr);
         fs.ensureDirSync(tempNativePath)
         for(let i=0; i<libArr.length; i++){
             const lib = libArr[i]
