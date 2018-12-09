@@ -17,7 +17,7 @@
             "icon": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/server-test.png",
             "version": "0.0.1",
             "address": "play.newhope.hu",
-            "minecraftVersion": "1.13.2",
+            "minecraftVersion": "1.12.2",
             "discord": {
                 "shortId": "NewHope",
                 "largeImageText": "Éppen a NewHope szereverén játszik!",
