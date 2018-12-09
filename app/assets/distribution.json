@@ -17,7 +17,7 @@
             "icon": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/server-test.png",
             "version": "4.2.1",
             "address": "mc.westeroscraft.com:4445",
-            "minecraftVersion": "1.12.2",
+            "minecraftVersion": "1.13.2",
             "discord": {
                 "shortId": "1.12.2 Test Server",
                 "largeImageText": "WesterosCraft 1.12.2 Test Server",
