@@ -36,186 +36,457 @@
                         "url": "http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.11.2-13.20.1.2429/forge-1.11.2-13.20.1.2429-universal.jar"
                     },
                     "subModules": [
-                        {
-                            "id": "net.minecraft:launchwrapper:1.12",
-                            "name": "Mojang (LaunchWrapper)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 32999,
-                                "MD5": "934b2d91c7c5be4a49577c9e6b40e8da",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/launchwrapper-1.12.jar"
-                            }
-                        },
-                        {
-                            "id": "org.ow2.asm:asm-all:5.0.3",
-                            "name": "Mojang (ASM)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 241639,
-                                "MD5": "c5cc4613bbdfba3ccf5f0ab85390d0b8",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/asm-all-5.0.3.jar"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-library:2.11.1@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-library)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 1474672,
-                                "MD5": "379c15c4f724421c6d5d7aecedaf87a6",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-library-2.11.1.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-compiler:2.11.1@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-compiler)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 3076920,
-                                "MD5": "7d89e952f2d5c74577310cd2c28e3f20",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-compiler-2.11.1.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-actors-migration_2.11:1.1.0@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-actors-migration)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 21324,
-                                "MD5": "04e3428b2600ace33c7ae2bf1f6c0a4c",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-actors-migration_2.11-1.1.0.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang.plugins:scala-continuations-library_2.11:1.0.2@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-continuations-library)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 7956,
-                                "MD5": "ed9b1d27aba8ac4090a3749c4dfc895a",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-continuations-library_2.11-1.0.2.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang.plugins:scala-continuations-plugin_2.11.1:1.0.2@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-continuations-plugin)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 46140,
-                                "MD5": "a8232db22a72a981de6b1399eb86dff7",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-continuations-plugin_2.11.1-1.0.2.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-parser-combinators_2.11:1.0.1@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-parser-combinators)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 85568,
-                                "MD5": "2e50a7df17680daadacca69f07f8a16d",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-parser-combinators_2.11-1.0.1.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-reflect:2.11.1@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-reflect)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 1070312,
-                                "MD5": "84e5dc81c10e2bd74c579c9d0332fdd9",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-reflect-2.11.1.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-swing_2.11:1.0.1",
-                            "name": "Minecraft Forge (scala-swing)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 736795,
-                                "MD5": "1d360289e697022a3f57abaad344b28f",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-swing_2.11-1.0.1.jar"
-                            }
-                        },
-                        {
-                            "id": "org.scala-lang:scala-xml_2.11:1.0.2@jar.pack.xz",
-                            "name": "Minecraft Forge (scala-xml)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 217812,
-                                "MD5": "cc891b094a4c32dedc56bfefe9b072ff",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/scala-xml_2.11-1.0.2.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "com.typesafe.akka:akka-actor_2.11:2.3.3@jar.pack.xz",
-                            "name": "Minecraft Forge (akka-actor)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 746612,
-                                "MD5": "25cb22c3078e9fb3f7a861c912924862",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/akka-actor_2.11-2.3.3.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "com.typesafe:config:1.2.1@jar.pack.xz",
-                            "name": "Minecraft Forge (typesafe-config)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 56636,
-                                "MD5": "10ec4ccabc4e68aac9cf87165ead5d7d",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/config-1.2.1.jar.pack.xz"
-                            }
-                        },
-                        {
-                            "id": "lzma:lzma:0.0.1",
-                            "name": "Mojang (LZMA)",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 5762,
-                                "MD5": "a3e3c3186e41c4a1a3027ba2bb23cdc6",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/lzma-0.0.1.jar"
-                            }
-                        },
-                        {
-                            "id": "net.sf.trove4j:trove4j:3.0.3",
-                            "name": "Trove4J",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 2523218,
-                                "MD5": "8fc4d4e0129244f9fd39650c5f30feb2",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/trove4j-3.0.3.jar"
-                            }
-                        },
-                        {
-                            "id": "java3d:vecmath:1.5.2",
-                            "name": "Vecmath",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 318956,
-                                "MD5": "e5d2b7f46c4800a32f62ce75676a5710",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/vecmath-1.5.2.jar"
-                            }
-                        },
-                        {
-                            "id": "net.sf.jopt-simple:jopt-simple:4.6",
-                            "name": "Jopt-simple",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 62477,
-                                "MD5": "13560a58a79b46b82057686543e8d727",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/jopt-simple-4.6.jar"
-                            }
-                        },
-                        {
-                            "id": "net.minecraftforge:MercuriusUpdater:1.11.2",
-                            "name": "MercuriusUpdater",
-                            "type": "Library",
-                            "artifact": {
-                                "size": 15146,
-                                "MD5": "7556d06064ebbfa3b334a15092d725d0",
-                                "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/1.11.2/MercuriusUpdater-1.11.2.jar"
-                            }
-                        }
+                                        
+        {
+            "id": "com.mojang:patchy:1.1",
+            "name": "com.mojang:patchy:1.1",
+            "type": "Library",
+            "artifact": {
+                "size": 15817,
+                "path": "com/mojang/patchy/1.1/patchy-1.1.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/patchy/1.1/patchy-1.1.jar" 
+            }
+        },                
+        {
+            "id": "oshi-project:oshi-core:1.1",
+            "name": "oshi-project:oshi-core:1.1",
+            "type": "Library",
+            "artifact": {
+                "size": 30973,
+                "path": "oshi-project/oshi-core/1.1/oshi-core-1.1.jar",
+                "url": "https://libraries.minecraft.net/oshi-project/oshi-core/1.1/oshi-core-1.1.jar" 
+            }
+        },                
+        {
+            "id": "net.java.dev.jna:jna:4.4.0",
+            "name": "net.java.dev.jna:jna:4.4.0",
+            "type": "Library",
+            "artifact": {
+                "size": 1091208,
+                "path": "net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar",
+                "url": "https://libraries.minecraft.net/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar" 
+            }
+        },                
+        {
+            "id": "net.java.dev.jna:platform:3.4.0",
+            "name": "net.java.dev.jna:platform:3.4.0",
+            "type": "Library",
+            "artifact": {
+                "size": 913436,
+                "path": "net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar",
+                "url": "https://libraries.minecraft.net/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar" 
+            }
+        },                
+        {
+            "id": "com.ibm.icu:icu4j-core-mojang:51.2",
+            "name": "com.ibm.icu:icu4j-core-mojang:51.2",
+            "type": "Library",
+            "artifact": {
+                "size": 1634692,
+                "path": "com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar",
+                "url": "https://libraries.minecraft.net/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar" 
+            }
+        },                
+        {
+            "id": "net.sf.jopt-simple:jopt-simple:5.0.3",
+            "name": "net.sf.jopt-simple:jopt-simple:5.0.3",
+            "type": "Library",
+            "artifact": {
+                "size": 78175,
+                "path": "net/sf/jopt-simple/jopt-simple/5.0.3/jopt-simple-5.0.3.jar",
+                "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/5.0.3/jopt-simple-5.0.3.jar" 
+            }
+        },                
+        {
+            "id": "com.paulscode:codecjorbis:20101023",
+            "name": "com.paulscode:codecjorbis:20101023",
+            "type": "Library",
+            "artifact": {
+                "size": 103871,
+                "path": "com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar",
+                "url": "https://libraries.minecraft.net/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar" 
+            }
+        },                
+        {
+            "id": "com.paulscode:codecwav:20101023",
+            "name": "com.paulscode:codecwav:20101023",
+            "type": "Library",
+            "artifact": {
+                "size": 5618,
+                "path": "com/paulscode/codecwav/20101023/codecwav-20101023.jar",
+                "url": "https://libraries.minecraft.net/com/paulscode/codecwav/20101023/codecwav-20101023.jar" 
+            }
+        },                
+        {
+            "id": "com.paulscode:libraryjavasound:20101123",
+            "name": "com.paulscode:libraryjavasound:20101123",
+            "type": "Library",
+            "artifact": {
+                "size": 21679,
+                "path": "com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar",
+                "url": "https://libraries.minecraft.net/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar" 
+            }
+        },                
+        {
+            "id": "com.paulscode:soundsystem:20120107",
+            "name": "com.paulscode:soundsystem:20120107",
+            "type": "Library",
+            "artifact": {
+                "size": 65020,
+                "path": "com/paulscode/soundsystem/20120107/soundsystem-20120107.jar",
+                "url": "https://libraries.minecraft.net/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar" 
+            }
+        },                
+        {
+            "id": "io.netty:netty-all:4.1.25.Final",
+            "name": "io.netty:netty-all:4.1.25.Final",
+            "type": "Library",
+            "artifact": {
+                "size": 3823147,
+                "path": "io/netty/netty-all/4.1.25.Final/netty-all-4.1.25.Final.jar",
+                "url": "https://libraries.minecraft.net/io/netty/netty-all/4.1.25.Final/netty-all-4.1.25.Final.jar" 
+            }
+        },                
+        {
+            "id": "com.google.guava:guava:21.0",
+            "name": "com.google.guava:guava:21.0",
+            "type": "Library",
+            "artifact": {
+                "size": 2521113,
+                "path": "com/google/guava/guava/21.0/guava-21.0.jar",
+                "url": "https://libraries.minecraft.net/com/google/guava/guava/21.0/guava-21.0.jar" 
+            }
+        },                
+        {
+            "id": "org.apache.commons:commons-lang3:3.5",
+            "name": "org.apache.commons:commons-lang3:3.5",
+            "type": "Library",
+            "artifact": {
+                "size": 479881,
+                "path": "org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar",
+                "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar" 
+            }
+        },                
+        {
+            "id": "commons-io:commons-io:2.5",
+            "name": "commons-io:commons-io:2.5",
+            "type": "Library",
+            "artifact": {
+                "size": 208700,
+                "path": "commons-io/commons-io/2.5/commons-io-2.5.jar",
+                "url": "https://libraries.minecraft.net/commons-io/commons-io/2.5/commons-io-2.5.jar" 
+            }
+        },                
+        {
+            "id": "commons-codec:commons-codec:1.10",
+            "name": "commons-codec:commons-codec:1.10",
+            "type": "Library",
+            "artifact": {
+                "size": 284184,
+                "path": "commons-codec/commons-codec/1.10/commons-codec-1.10.jar",
+                "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" 
+            }
+        },                
+        {
+            "id": "net.java.jinput:jinput:2.0.5",
+            "name": "net.java.jinput:jinput:2.0.5",
+            "type": "Library",
+            "artifact": {
+                "size": 208338,
+                "path": "net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar",
+                "url": "https://libraries.minecraft.net/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar" 
+            }
+        },                
+        {
+            "id": "net.java.jutils:jutils:1.0.0",
+            "name": "net.java.jutils:jutils:1.0.0",
+            "type": "Library",
+            "artifact": {
+                "size": 7508,
+                "path": "net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar",
+                "url": "https://libraries.minecraft.net/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar" 
+            }
+        },                
+        {
+            "id": "com.mojang:brigadier:1.0.14",
+            "name": "com.mojang:brigadier:1.0.14",
+            "type": "Library",
+            "artifact": {
+                "size": 73350,
+                "path": "com/mojang/brigadier/1.0.14/brigadier-1.0.14.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/brigadier/1.0.14/brigadier-1.0.14.jar" 
+            }
+        },                
+        {
+            "id": "com.mojang:datafixerupper:1.0.19",
+            "name": "com.mojang:datafixerupper:1.0.19",
+            "type": "Library",
+            "artifact": {
+                "size": 431014,
+                "path": "com/mojang/datafixerupper/1.0.19/datafixerupper-1.0.19.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/datafixerupper/1.0.19/datafixerupper-1.0.19.jar" 
+            }
+        },                
+        {
+            "id": "com.google.code.gson:gson:2.8.0",
+            "name": "com.google.code.gson:gson:2.8.0",
+            "type": "Library",
+            "artifact": {
+                "size": 231952,
+                "path": "com/google/code/gson/gson/2.8.0/gson-2.8.0.jar",
+                "url": "https://libraries.minecraft.net/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar" 
+            }
+        },                
+        {
+            "id": "com.mojang:authlib:1.5.25",
+            "name": "com.mojang:authlib:1.5.25",
+            "type": "Library",
+            "artifact": {
+                "size": 65621,
+                "path": "com/mojang/authlib/1.5.25/authlib-1.5.25.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/authlib/1.5.25/authlib-1.5.25.jar" 
+            }
+        },                
+        {
+            "id": "org.apache.commons:commons-compress:1.8.1",
+            "name": "org.apache.commons:commons-compress:1.8.1",
+            "type": "Library",
+            "artifact": {
+                "size": 365552,
+                "path": "org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar",
+                "url": "https://libraries.minecraft.net/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar" 
+            }
+        },                
+        {
+            "id": "org.apache.httpcomponents:httpclient:4.3.3",
+            "name": "org.apache.httpcomponents:httpclient:4.3.3",
+            "type": "Library",
+            "artifact": {
+                "size": 589512,
+                "path": "org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar",
+                "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar" 
+            }
+        },                
+        {
+            "id": "commons-logging:commons-logging:1.1.3",
+            "name": "commons-logging:commons-logging:1.1.3",
+            "type": "Library",
+            "artifact": {
+                "size": 62050,
+                "path": "commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar",
+                "url": "https://libraries.minecraft.net/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar" 
+            }
+        },                
+        {
+            "id": "org.apache.httpcomponents:httpcore:4.3.2",
+            "name": "org.apache.httpcomponents:httpcore:4.3.2",
+            "type": "Library",
+            "artifact": {
+                "size": 282269,
+                "path": "org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar",
+                "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar" 
+            }
+        },                
+        {
+            "id": "it.unimi.dsi:fastutil:8.2.1",
+            "name": "it.unimi.dsi:fastutil:8.2.1",
+            "type": "Library",
+            "artifact": {
+                "size": 18800417,
+                "path": "it/unimi/dsi/fastutil/8.2.1/fastutil-8.2.1.jar",
+                "url": "https://libraries.minecraft.net/it/unimi/dsi/fastutil/8.2.1/fastutil-8.2.1.jar" 
+            }
+        },                
+        {
+            "id": "org.apache.logging.log4j:log4j-api:2.8.1",
+            "name": "org.apache.logging.log4j:log4j-api:2.8.1",
+            "type": "Library",
+            "artifact": {
+                "size": 228859,
+                "path": "org/apache/logging/log4j/log4j-api/2.8.1/log4j-api-2.8.1.jar",
+                "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-api/2.8.1/log4j-api-2.8.1.jar" 
+            }
+        },                
+        {
+            "id": "org.apache.logging.log4j:log4j-core:2.8.1",
+            "name": "org.apache.logging.log4j:log4j-core:2.8.1",
+            "type": "Library",
+            "artifact": {
+                "size": 1402925,
+                "path": "org/apache/logging/log4j/log4j-core/2.8.1/log4j-core-2.8.1.jar",
+                "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-core/2.8.1/log4j-core-2.8.1.jar" 
+            }
+        },                
+        {
+            "id": "com.mojang:realms:1.13.9",
+            "name": "com.mojang:realms:1.13.9",
+            "type": "Library",
+            "artifact": {
+                "size": 6385071,
+                "path": "com/mojang/realms/1.13.9/realms-1.13.9.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/realms/1.13.9/realms-1.13.9.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl:3.1.6",
+            "name": "org.lwjgl:lwjgl:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 299086,
+                "path": "org/lwjgl/lwjgl/3.1.6/lwjgl-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.1.6/lwjgl-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-jemalloc:3.1.6",
+            "name": "org.lwjgl:lwjgl-jemalloc:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 40775,
+                "path": "org/lwjgl/lwjgl-jemalloc/3.1.6/lwjgl-jemalloc-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.1.6/lwjgl-jemalloc-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-openal:3.1.6",
+            "name": "org.lwjgl:lwjgl-openal:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 79062,
+                "path": "org/lwjgl/lwjgl-openal/3.1.6/lwjgl-openal-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.1.6/lwjgl-openal-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-opengl:3.1.6",
+            "name": "org.lwjgl:lwjgl-opengl:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 821814,
+                "path": "org/lwjgl/lwjgl-opengl/3.1.6/lwjgl-opengl-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.1.6/lwjgl-opengl-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-glfw:3.1.6",
+            "name": "org.lwjgl:lwjgl-glfw:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 114101,
+                "path": "org/lwjgl/lwjgl-glfw/3.1.6/lwjgl-glfw-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.1.6/lwjgl-glfw-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-stb:3.1.6",
+            "name": "org.lwjgl:lwjgl-stb:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 104583,
+                "path": "org/lwjgl/lwjgl-stb/3.1.6/lwjgl-stb-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.1.6/lwjgl-stb-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl:3.1.6",
+            "name": "org.lwjgl:lwjgl:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 299086,
+                "path": "org/lwjgl/lwjgl/3.1.6/lwjgl-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.1.6/lwjgl-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-jemalloc:3.1.6",
+            "name": "org.lwjgl:lwjgl-jemalloc:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 40775,
+                "path": "org/lwjgl/lwjgl-jemalloc/3.1.6/lwjgl-jemalloc-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.1.6/lwjgl-jemalloc-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-openal:3.1.6",
+            "name": "org.lwjgl:lwjgl-openal:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 79062,
+                "path": "org/lwjgl/lwjgl-openal/3.1.6/lwjgl-openal-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.1.6/lwjgl-openal-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-opengl:3.1.6",
+            "name": "org.lwjgl:lwjgl-opengl:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 821814,
+                "path": "org/lwjgl/lwjgl-opengl/3.1.6/lwjgl-opengl-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.1.6/lwjgl-opengl-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-glfw:3.1.6",
+            "name": "org.lwjgl:lwjgl-glfw:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 114101,
+                "path": "org/lwjgl/lwjgl-glfw/3.1.6/lwjgl-glfw-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.1.6/lwjgl-glfw-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "org.lwjgl:lwjgl-stb:3.1.6",
+            "name": "org.lwjgl:lwjgl-stb:3.1.6",
+            "type": "Library",
+            "artifact": {
+                "size": 104583,
+                "path": "org/lwjgl/lwjgl-stb/3.1.6/lwjgl-stb-3.1.6.jar",
+                "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.1.6/lwjgl-stb-3.1.6.jar" 
+            }
+        },                
+        {
+            "id": "com.mojang:text2speech:1.10.3",
+            "name": "com.mojang:text2speech:1.10.3",
+            "type": "Library",
+            "artifact": {
+                "size": 11055,
+                "path": "com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar" 
+            }
+        },                
+        {
+            "id": "com.mojang:text2speech:1.10.3",
+            "name": "com.mojang:text2speech:1.10.3",
+            "type": "Library",
+            "artifact": {
+                "size": 11055,
+                "path": "com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar",
+                "url": "https://libraries.minecraft.net/com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar" 
+            }
+        },                
+        {
+            "id": "ca.weblite:java-objc-bridge:1.0.0",
+            "name": "ca.weblite:java-objc-bridge:1.0.0",
+            "type": "Library",
+            "artifact": {
+                "size": 40502,
+                "path": "ca/weblite/java-objc-bridge/1.0.0/java-objc-bridge-1.0.0.jar",
+                "url": "https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.0.0/java-objc-bridge-1.0.0.jar" 
+            }
+        },                
+        {
+            "id": "ca.weblite:java-objc-bridge:1.0.0",
+            "name": "ca.weblite:java-objc-bridge:1.0.0",
+            "type": "Library",
+            "artifact": {
+                "size": 40502,
+                "path": "ca/weblite/java-objc-bridge/1.0.0/java-objc-bridge-1.0.0.jar",
+                "url": "https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.0.0/java-objc-bridge-1.0.0.jar" 
+            }
+        },
                     ]
                 },
                 {
