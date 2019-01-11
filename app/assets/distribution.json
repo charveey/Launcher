@@ -14,7 +14,7 @@
             "id": "NewHope-1.12.2",
             "name": "NewHope (legfrissebb)",
             "description": "A NewHope legfrissebb verziója. A játék ezen a verzión ajánlott!",
-            "icon": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/server-test.png",
+            "icon": "https://img.newhope.hu//favicon.ico",
             "version": "0.0.1",
             "address": "play.newhope.hu",
             "minecraftVersion": "1.12.2",
@@ -235,7 +235,7 @@
                     "artifact": {
                         "size": 1973,
                         "path": "options.txt",
-                        "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/options-1.12.2.txt" 
+                        "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/options-1.12.2.txt"
                     }
                 },
                 {
@@ -246,7 +246,7 @@
                         "size": 87,
                         "MD5": "64dc1db90935997f07dfac422206f1de",
                         "path": "servers.dat",
-                        "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/test-1.12.2/servers.dat" 
+                        "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/test-1.12.2/servers.dat"
                     }
                 }
             ]
