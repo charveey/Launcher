@@ -8,7 +8,7 @@
     "java": {
         "oracle": "http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html"
     },
-    "rss": "https://westeroscraft.com/articles/index.rss",
+    "rss": "",
     "servers": [
         {
             "id": "NewHope-1.12.2",
@@ -235,7 +235,7 @@
                     "artifact": {
                         "size": 1973,
                         "path": "options.txt",
-                        "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/options-1.12.2.txt"
+                        "url": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/options.txt"
                     }
                 },
                 {
@@ -246,7 +246,7 @@
                         "size": 87,
                         "MD5": "64dc1db90935997f07dfac422206f1de",
                         "path": "servers.dat",
-                        "url": "http://mc.westeroscraft.com/WesterosCraftLauncher/test-1.12.2/servers.dat"
+                        "url": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/servers.dat"
                     }
                 }
             ]
