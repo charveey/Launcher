@@ -156,6 +156,7 @@ server_selection_button.onclick = (e) => {
 }
 
 // Update Mojang Status Color
+/*
 const refreshMojangStatuses = async function(){
     loggerLanding.log('Refreshing Mojang Statuses..')
 
@@ -213,19 +214,20 @@ const refreshMojangStatuses = async function(){
     document.getElementById('mojangStatusNonEssentialContainer').innerHTML = tooltipNonEssentialHTML
     document.getElementById('mojang_status_icon').style.color = Mojang.statusToHex(status)
 }
+*/
 
 const refreshServerStatus = async function(fade = false){
     loggerLanding.log('Refreshing Server Status')
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
-    let pLabel = 'SERVER'
+    let pLabel = 'SZERVER'
     let pVal = 'OFFLINE'
 
     try {
         const serverURL = new URL('my://' + serv.getAddress())
         const servStat = await ServerStatus.getStatus(serverURL.hostname, serverURL.port)
         if(servStat.online){
-            pLabel = 'PLAYERS'
+            pLabel = 'JÁTÉKOS'
             pVal = servStat.onlinePlayers + '/' + servStat.maxPlayers
         }
 
@@ -246,11 +248,11 @@ const refreshServerStatus = async function(fade = false){
     
 }
 
-refreshMojangStatuses()
+//refreshMojangStatuses()
 // Server Status is refreshed in uibinder.js on distributionIndexDone.
 
 // Set refresh rate to once every 5 minutes.
-let mojangStatusListener = setInterval(() => refreshMojangStatuses(true), 300000)
+//let mojangStatusListener = setInterval(() => refreshMojangStatuses(true), 300000)
 let serverStatusListener = setInterval(() => refreshServerStatus(true), 300000)
 
 /* System (Java) Scan */
@@ -293,13 +295,13 @@ function asyncSystemScan(launchAfter = true){
                 // If the result is null, no valid Java installation was found.
                 // Show this information to the user.
                 setOverlayContent(
-                    'No Compatible<br>Java Installation Found',
-                    'In order to join WesterosCraft, you need a 64-bit installation of Java 8. Would you like us to install a copy? By installing, you accept <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle\'s license agreement</a>.',
-                    'Install Java',
-                    'Install Manually'
+                    'Probléma adódott<br>Nincs Java telepítve a gépedre',
+                    'Ahhoz, hogy játszhass a NewHope-pal le kell töltened a Java-t. A Java letöltésével elfogadod a <a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle\'s license agreement</a>.',
+                    'Java telepítése',
+                    'Manuális telepítés'
                 )
                 setOverlayHandler(() => {
-                    setLaunchDetails('Preparing Java Download..')
+                    setLaunchDetails('Java letöltésének előkészítése...')
                     sysAEx.send({task: 'execute', function: '_enqueueOracleJRE', argsArr: [ConfigManager.getLauncherDirectory()]})
                     toggleOverlay(false)
                 })
@@ -597,7 +599,7 @@ function dlAsync(login = true){
                 const authUser = ConfigManager.getSelectedAccount()
                 loggerLaunchSuite.log(`Sending selected account (${authUser.displayName}) to ProcessBuilder.`)
                 let pb = new ProcessBuilder(serv, versionData, authUser)
-                setLaunchDetails('Launching game..')
+                setLaunchDetails('Játék indítása...')
 
                 // Attach a temporary listener to the client output.
                 // Will wait for a certain bit of text meaning that
@@ -607,7 +609,7 @@ function dlAsync(login = true){
                     if(GAME_LAUNCH_REGEX.test(data.trim())){
                         toggleLaunchArea(false)
                         if(hasRPC){
-                            DiscordWrapper.updateDetails('Loading game..')
+                            DiscordWrapper.updateDetails('Játék betöltése...')
                         }
                         proc.stdout.on('data', gameStateChange)
                         proc.stdout.removeListener('data', tempListener)
@@ -619,9 +621,9 @@ function dlAsync(login = true){
                 const gameStateChange = function(data){
                     data = data.trim()
                     if(SERVER_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Exploring the Realm!')
+                        DiscordWrapper.updateDetails('Éppen a NewHope szerverein játszik!')
                     } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Sailing to Westeros!')
+                        DiscordWrapper.updateDetails('NewHope betöltése!')
                     }
                 }
 

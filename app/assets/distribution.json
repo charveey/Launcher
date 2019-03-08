@@ -14,7 +14,7 @@
             "id": "NewHope-1.12.2",
             "name": "NewHope (legfrissebb)",
             "description": "A NewHope legfrissebb verziója. A játék ezen a verzión ajánlott!",
-            "icon": "https://img.newhope.hu//favicon.ico",
+            "icon": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/images/NewHopeIcon.ico",
             "version": "0.0.1",
             "address": "play.newhope.hu",
             "minecraftVersion": "1.12.2",
