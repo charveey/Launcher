@@ -275,12 +275,12 @@ body, button {
 */
 
 #welcomeImageSeal {
-    border-radius: 50%;
+    /*border-radius: 50%;
     border: 2px solid #cad7e1;
-    background: rgba(1, 2, 1, 0.5);
+    background: rgba(1, 2, 1, 0.5);*/
     height: 125px;
-    width: 125px;
-    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+    /*width: 125px;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);*/
     margin-bottom: 5%;
     margin-top: 10%;
 }
@@ -488,12 +488,12 @@ body, button {
 
 /* Logo on login form. */
 #loginImageSeal {
-    border-radius: 50%;
+    /*border-radius: 50%;
     border: 2px solid #cad7e1;
-    background: rgba(1, 2, 1, 0.5);
+    background: rgba(1, 2, 1, 0.5);*/
     height: 125px;
-    width: 125px;
-    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+    /*width: 125px;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);*/
     margin-bottom: 20px;
 }
 
@@ -534,6 +534,7 @@ body, button {
     top: 7px;
     opacity: 0;
     transition: 0.25s ease;
+    z-index: -999;
 }
 
 .shake {
@@ -562,7 +563,7 @@ body, button {
 .loginField {
     font-family: 'Avenir Book';
     background: none;
-    border-width: 1.5px 0px 0px 0px;
+    border-width: 0px 0px 1.5px 0px;
     border-style: solid;
     width: 250px;
     margin-bottom: 20px;
@@ -2284,9 +2285,10 @@ input:checked + .toggleSwitchSlider:before {
 }
 #landingContainer > #upper > #left {
     display: inline-flex;
-    width: 15%;
+    width: auto;
     height: 100%;
     justify-content: flex-end;
+    margin-left: 10%;
 }
 #landingContainer > #upper > #content {
     display: inline-flex;
@@ -2313,6 +2315,7 @@ input:checked + .toggleSwitchSlider:before {
     width: 33%;
     display: inline-flex;
     justify-content: center;
+    le
 }
 #landingContainer > #lower > #left #content {
     position: relative;
@@ -2679,7 +2682,7 @@ input:checked + .toggleSwitchSlider:before {
     height: 70px;
     width: auto;
     position: relative;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     box-sizing: border-box;
     border-radius: 50%;
 }
@@ -2688,9 +2691,10 @@ input:checked + .toggleSwitchSlider:before {
 #image_seal_container {
     position: relative;
     height: 70px;
-    width: 70px;
-    border-radius: 50%;
+    /*width: 70px;*/
+    /*border-radius: 50%;*/
     margin-top: 50px;
+    margin-left: 10%;
 }
 
 /* Logo container styles w/ update. */
@@ -2706,7 +2710,7 @@ input:checked + .toggleSwitchSlider:before {
     width: 100%;
     top: 0%;
     left: 0%;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     box-shadow: 0 0 15px #43c628;
     animation: glow-grow 4s ease-out infinite;
     background: rgba(0, 0, 0, 0.15);
@@ -2791,7 +2795,8 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile avatar container. */
 #avatarContainer {
-    border-radius: 50%;
+    /*border-radius: 50%;*/
+    border-radius: 2%;
     border: 2px solid #cad7e1;
     box-sizing: border-box;
     background: rgba(1, 2, 1, 0.5);
@@ -2822,7 +2827,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 2%;
 }
 #avatarOverlay:hover,
 #avatarOverlay:focus {

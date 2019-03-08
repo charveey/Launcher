@@ -1,13 +1,13 @@
 {
-  "name": "electronlauncher",
-  "version": "1.6.0",
-  "productName": "Electron Launcher",
-  "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
+  "name": "newhopelauncher",
+  "version": "1.0.0",
+  "productName": "NewHope",
+  "description": "NewHope saját launchere",
+  "author": "Daniel Scalzi (https://github.com/dscalzi/), Gál Péter (https://github.com/pepyta/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/dscalzi/ElectronLauncher",
+  "homepage": "https://github.com/pepyta/NewHopeLauncher",
   "bugs": {
-    "url": "https://github.com/dscalzi/ElectronLauncher/issues"
+    "url": "https://github.com/pepyta/NewHopeLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -47,13 +47,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/ElectronLauncher.git"
+    "url": "git+https://github.com/pepyta/NewHopeLauncher.git"
   },
   "build": {
-    "appId": "electronlauncher",
-    "productName": "Electron Launcher",
+    "appId": "newhopelauncher",
+    "productName": "NewHope",
     "artifactName": "${productName}.${ext}",
-    "copyright": "Copyright © 2018-2019 Daniel Scalzi",
+    "copyright": "Copyright © 2018 Daniel Scalzi, Gál Péter",
     "directories": {
       "buildResources": "build",
       "output": "dist"
@@ -82,10 +82,10 @@
     },
     "linux": {
       "target": "AppImage",
-      "maintainer": "Daniel Scalzi",
-      "vendor": "Daniel Scalzi",
-      "synopsis": "Modded Minecraft Launcher",
-      "description": "Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.",
+      "maintainer": "Gál Péter",
+      "vendor": "newhopelauncher",
+      "synopsis": "Saját indító a NewHopehoz",
+      "description": "NewHope saját launchere",
       "category": "Game"
     },
     "deb": {

@@ -1707,45 +1707,33 @@ class AssetGuard extends EventEmitter {
 
     async validateEverything(serverid, dev = false){
 
-        try {
-            if(!ConfigManager.isLoaded()){
-                ConfigManager.load()
-            }
-            DistroManager.setDevMode(dev)
-            const dI = await DistroManager.pullLocal()
-    
-            const server = dI.getServer(serverid)
-    
-            // Validate Everything
-    
-            await this.validateDistribution(server)
-            this.emit('validate', 'distribution')
-            const versionData = await this.loadVersionData(server.getMinecraftVersion())
-            this.emit('validate', 'version')
-            await this.validateAssets(versionData)
-            this.emit('validate', 'assets')
-            await this.validateLibraries(versionData)
-            this.emit('validate', 'libraries')
-            await this.validateMiscellaneous(versionData)
-            this.emit('validate', 'files')
-            await this.processDlQueues()
-            //this.emit('complete', 'download')
-            const forgeData = await this.loadForgeData(server)
-        
-            return {
-                versionData,
-                forgeData
-            }
-
-        } catch (err){
-            return {
-                versionData: null,
-                forgeData: null,
-                error: err
-            }
+        if(!ConfigManager.isLoaded()){
+            ConfigManager.load()
         }
-        
+        DistroManager.setDevMode(dev)
+        const dI = await DistroManager.pullLocal()
 
+        const server = dI.getServer(serverid)
+
+        // Validate Everything
+
+        await this.validateDistribution(server)
+        this.emit('validate', 'distribution')
+        const versionData = await this.loadVersionData(server.getMinecraftVersion())
+        this.emit('validate', 'version')
+        await this.validateAssets(versionData)
+        this.emit('validate', 'assets')
+        await this.validateLibraries(versionData)
+        this.emit('validate', 'libraries')
+        await this.validateMiscellaneous(versionData)
+        this.emit('validate', 'files')
+        await this.processDlQueues()
+        //this.emit('complete', 'download')
+        //const forgeData = await this.loadForgeData(server)
+    
+        return {
+            versionData
+        } 
     }
 
     // #endregion
