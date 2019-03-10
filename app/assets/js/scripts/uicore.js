@@ -43,13 +43,13 @@ if(!isDev){
         switch(arg){
             case 'checking-for-update':
                 loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                settingsUpdateButtonStatus('Frissítések keresése...', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('New update available', info.version)
+                loggerAutoUpdaterSuccess.log('Új frissítések elérhetőek', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/pepyta/NewHopeLauncher/releases/download/v${info.version}/newhope-${info.version}.dmg`
+                    info.darwindownload = `https://github.com/pepyta/NewHopeLauncher/releases/download/v${info.version}/NewHope.dmg`
                     showUpdateUI(info)
                 }
                 
@@ -57,7 +57,7 @@ if(!isDev){
                 break
             case 'update-downloaded':
                 loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('Install Now', false, () => {
+                settingsUpdateButtonStatus('Frissítés telepítése', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -66,7 +66,7 @@ if(!isDev){
                 break
             case 'update-not-available':
                 loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                settingsUpdateButtonStatus('Frissítések keresése')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
