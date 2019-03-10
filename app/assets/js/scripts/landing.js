@@ -643,7 +643,7 @@ function dlAsync(login = true){
             if(login && allGood) {
                 const authUser = ConfigManager.getSelectedAccount()
                 loggerLaunchSuite.log(`Sending selected account (${authUser.displayName}) to ProcessBuilder.`)
-                let pb = new ProcessBuilder(serv, versionData, forgeData, authUser, remote.app.getVersion())
+                let pb = new ProcessBuilder(serv, versionData, authUser, remote.app.getVersion())
                 setLaunchDetails('Launching game..')
 
                 // Attach a temporary listener to the client output.

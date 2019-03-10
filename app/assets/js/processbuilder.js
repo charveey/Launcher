@@ -15,7 +15,7 @@ const logger = LoggerUtil('%c[ProcessBuilder]', 'color: #003996; font-weight: bo
 
 class ProcessBuilder {
 
-    constructor(distroServer, versionData, authUser){
+    constructor(distroServer, versionData, authUser, launcherVersion){
         this.gameDir = path.join(ConfigManager.getInstanceDirectory(), distroServer.getID())
         this.commonDir = ConfigManager.getCommonDirectory()
         this.server = distroServer
@@ -190,7 +190,7 @@ class ProcessBuilder {
      */
     _requiresAbsolute(){
         try {
-            const ver = this.forgeData.id.split('-')[2]
+            const ver = this.versionData.id.split('-')[2]
             const pts = ver.split('.')
             const min = [14, 23, 3, 2655]
             for(let i=0; i<pts.length; i++){
@@ -280,13 +280,17 @@ class ProcessBuilder {
         }
     }
 
+    /**
+     * Construct the argument array that will be passed to the JVM process.
+     * This function is for 1.12 and below.
+     * 
+     * @param {Array.<Object>} mods An array of enabled mods which will be launched with this process.
+     * @param {string} tempNativePath The path to store the native libraries.
+     * @returns {Array.<string>} An array containing the full JVM arguments for this process.
+     */
     _constructJVMArguments112(mods, tempNativePath){
-        let args = ['-Xmx' + ConfigManager.getMaxRAM(),
-            '-Xms' + ConfigManager.getMinRAM(),
-            '-Djava.library.path=' + tempNativePath,
-            '-cp',
-            this.classpathArg(mods, tempNativePath).join(process.platform === 'win32' ? ';' : ':'),
-            this.versionData.mainClass]
+
+        let args = []
 
         // Classpath Argument
         args.push('-cp')
@@ -294,8 +298,8 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.unshift('-Xdock:name=NewHope')
-            args.unshift('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
+            args.push('-Xdock:name=NewHope')
+            args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM())
         args.push('-Xms' + ConfigManager.getMinRAM())
@@ -303,10 +307,10 @@ class ProcessBuilder {
         args.push('-Djava.library.path=' + tempNativePath)
 
         // Main Java Class
-        args.push(this.forgeData.mainClass)
+        args.push(this.versionData.mainClass)
 
         // Forge Arguments
-        args = args.concat(this._resolveForgeArgs())
+        //args = args.concat(this._resolveForgeArgs())
 
         return args
     }
@@ -340,7 +344,7 @@ class ProcessBuilder {
         args = args.concat(ConfigManager.getJVMOptions())
 
         // Main Java Class
-        args.push(this.forgeData.mainClass)
+        args.push(this.versionData.mainClass)
 
         // Vanilla Arguments
         args = args.concat(this.versionData.arguments.game)
@@ -451,7 +455,7 @@ class ProcessBuilder {
         }
 
         // Forge Specific Arguments
-        args = args.concat(this.forgeData.arguments.game)
+        args = args.concat(this.versionData.arguments.game)
 
         // Filter null values
         args = args.filter(arg => {
@@ -597,8 +601,7 @@ class ProcessBuilder {
         fs.ensureDirSync(tempNativePath)
         for(let i=0; i<libArr.length; i++){
             const lib = libArr[i]
-            
-            if(Library.validateRules(lib.rules)){
+            if(Library.validateRules(lib.rules, lib.natives)){
                 if(lib.natives == null){
                     const dlInfo = lib.downloads
                     const artifact = dlInfo.artifact
@@ -606,9 +609,7 @@ class ProcessBuilder {
                     libs.push(to)
                 } else {
                     // Extract the native library.
-                    const extractInst = lib.extract
-                    console.log(lib)
-                    const exclusionArr = extractInst.exclude
+                    const exclusionArr = lib.extract != null ? lib.extract.exclude : ['META-INF/']
                     const artifact = lib.downloads.classifiers[lib.natives[Library.mojangFriendlyOS()].replace('${arch}', process.arch.replace('x', ''))]
     
                     // Location of native zip.

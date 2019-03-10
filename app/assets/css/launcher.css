@@ -349,12 +349,14 @@ body, button {
 #welcomeButton:hover #welcomeSVG,
 #welcomeButton:focus #welcomeSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
+    filter: drop-shadow(0px 0px 2px #fff);
 }
 #welcomeButton:active #welcomeSVG .arrowLine {
     stroke: #c7c7c7;
 }
 #welcomeButton:active #welcomeSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+    filter: drop-shadow(0px 0px 2px #c7c7c7);
 }
 #welcomeButton:disabled #welcomeSVG .arrowLine {
     stroke: rgba(255, 255, 255, 0.75);
@@ -652,12 +654,14 @@ body, button {
 #loginButton:hover #loginSVG,
 #loginButton:focus #loginSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
+    filter: drop-shadow(0px 0px 2px #fff);
 }
 #loginButton:active #loginSVG .arrowLine {
     stroke: #c7c7c7;
 }
 #loginButton:active #loginSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+    filter: drop-shadow(0px 0px 2px #c7c7c7);
 }
 #loginButton:disabled #loginSVG .arrowLine {
     stroke: rgba(255, 255, 255, 0.75);
@@ -2315,7 +2319,6 @@ input:checked + .toggleSwitchSlider:before {
     width: 33%;
     display: inline-flex;
     justify-content: center;
-    le
 }
 #landingContainer > #lower > #left #content {
     position: relative;
@@ -2600,6 +2603,7 @@ input:checked + .toggleSwitchSlider:before {
 #newsNavigateRight:hover #newsNavigationRightSVG,
 #newsNavigateRight:focus #newsNavigationRightSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
+    filter: drop-shadow(0px 0px 2px #fff);
 }
 #newsNavigateLeft:active #newsNavigationLeftSVG .arrowLine,
 #newsNavigateRight:active #newsNavigationRightSVG .arrowLine {
@@ -2608,6 +2612,7 @@ input:checked + .toggleSwitchSlider:before {
 #newsNavigateLeft:active #newsNavigationLeftSVG,
 #newsNavigateRight:active #newsNavigationRightSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+    filter: drop-shadow(0px 0px 2px #c7c7c7);
 }
 #newsNavigateLeft:disabled #newsNavigationLeftSVG .arrowLine,
 #newsNavigateRight:disabled #newsNavigationRightSVG .arrowLine {
@@ -3167,12 +3172,14 @@ input:checked + .toggleSwitchSlider:before {
 #newsButton:hover #newsButtonSVG,
 #newsButton:focus #newsButtonSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
+    filter: drop-shadow(0px 0px 2px #fff);
 }
 #newsButton:active #newsButtonSVG .arrowLine {
     stroke: #c7c7c7;
 }
 #newsButton:active #newsButtonSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #c7c7c7);
+    filter: drop-shadow(0px 0px 2px #c7c7c7);
 }
 #newsButton:disabled #newsButtonSVG .arrowLine {
     stroke: rgba(255, 255, 255, 0.75);
@@ -3573,7 +3580,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Server listing image. */
 .serverListingImg {
     margin: 0px 10px 0px 5px;
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     height: 50px;
     width: 50px;
 }

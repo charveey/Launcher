@@ -2,21 +2,21 @@
     <div id="settingsContainerLeft">
         <div id="settingsNavContainer">
             <div id="settingsNavHeader">
-                <span id="settingsNavHeaderText">Settings</span>
+                <span id="settingsNavHeaderText">Beállítások</span>
             </div>
             <div id="settingsNavItemsContainer">
                 <div id="settingsNavItemsContent">
-                    <button class="settingsNavItem" rSc="settingsTabAccount" id="settingsNavAccount" selected>Account</button>
+                    <button class="settingsNavItem" rSc="settingsTabAccount" id="settingsNavAccount" selected>Felhasználó</button>
                     <button class="settingsNavItem" rSc="settingsTabMinecraft">Minecraft</button>
-                    <button class="settingsNavItem" rSc="settingsTabMods">Mods</button>
+                    <!--<button class="settingsNavItem" rSc="settingsTabMods">Mods</button>-->
                     <button class="settingsNavItem" rSc="settingsTabJava">Java</button>
-                    <button class="settingsNavItem" rSc="settingsTabLauncher">Launcher</button>
+                    <button class="settingsNavItem" rSc="settingsTabLauncher">Indító beállítások</button>
                     <div class="settingsNavSpacer"></div>
-                    <button class="settingsNavItem" rSc="settingsTabAbout">About</button>
-                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">Updates</button>
+                    <button class="settingsNavItem" rSc="settingsTabAbout">Rólunk</button>
+                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">Frissítések</button>
                     <div id="settingsNavContentBottom">
                         <div class="settingsNavDivider"></div>
-                        <button id="settingsNavDone">Done</button>
+                        <button id="settingsNavDone">Bezár</button>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@
             <div id="settingsJavaExecContainer">
                 <div id="settingsJavaExecTitle">Java futtató</div>
                 <div id="settingsJavaExecContent">
-                    <div id="settingsJavaExecDetails">Selected: Java 8 Update 172 (x64)</div>
+                    <div id="settingsJavaExecDetails">Kiválasztva: Java 8 Update 172 (x64)</div>
                     <div class="settingsFileSelActions">
                         <div class="settingsFileSelIcon">
                             <svg class="settingsFileSelSVG" x="0px" y="0px" viewBox="0 0 305.001 305.001">
@@ -204,14 +204,14 @@
                         </div>
                         <input class="settingsFileSelVal" iid="settingsJavaExecVal" type="text" value="null" cValue="JavaExecutable" disabled>
                         <input class="settingsFileSelSel"id="settingsJavaExecSel" type="file" <%=process.platform==='win32' ? 'accept=.exe' : '' %>>
-                        <label class="settingsFileSelLabel" id="settingsJavaExecLabel" for="settingsJavaExecSel">Choose File</label>
+                        <label class="settingsFileSelLabel" id="settingsJavaExecLabel" for="settingsJavaExecSel">Kiválasztás</label>
                     </div>
                 </div>
-                <div id="settingsJavaExecDesc">The Java executable is validated before game launch. <strong>Requires Java 8 x64.</strong><br>The path should end with <strong>bin
-                        <%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.</div>
+                <div class="settingsFileSelDesc">A Java futtató minden indítás előtt ellenőrízve van. <strong>Szükséges: Java 8 x64.</strong><br>Az elérési útvonalnak <strong>bin
+                    <%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>-nal/nel kell végződnie.</div>
             </div>
             <div id="settingsJVMOptsContainer">
-                <div id="settingsJVMOptsTitle">Additional JVM Options</div>
+                <div id="settingsJVMOptsTitle">További JVM opciók</div>
                 <div id="settingsJVMOptsContent">
                     <div class="settingsFileSelIcon">
                         <svg class="settingsFileSelSVG" x="0px" y="0px" viewBox="0 0 305.001 305.001">
@@ -229,18 +229,18 @@
                     </div>
                     <input id="settingsJVMOptsVal" cValue="JVMOptions" type="text">
                 </div>
-                <div id="settingsJVMOptsDesc">Options to be provided to the JVM at runtime. <em>-Xms</em> and <em>-Xmx</em> should not be included.<br><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/<%= process.platform === 'win32' ? 'windows' : 'unix' %>/java.html">Available Options for Java 8</a>.</div>
+                <div id="settingsJVMOptsDesc">A JVM külön megadott paraméterei. Az <em>-Xms</em>-t és a <em>-Xmx</em>-et ne ide írd!<br><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/<%= process.platform === 'win32' ? 'windows' : 'unix' %>/java.html">Elérhető Java indítási parancsok</a>.</div>
             </div>
         </div>
         <div id="settingsTabLauncher" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Launcher Settings</span>
-                <span class="settingsTabHeaderDesc">Options related to the launcher itself.</span>
+                <span class="settingsTabHeaderText">Indító beállítások</span>
+                <span class="settingsTabHeaderDesc">Az indítóhoz kapcsolódó beállítások.</span>
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Allow Pre-Release Updates.</span>
-                    <span class="settingsFieldDesc">Pre-Releases include new features which may have not been fully tested or integrated.<br>This will always be true if you are using a pre-release version.</span>
+                    <span class="settingsFieldTitle">Kiadás előtti (béta) verziók letöltése</span>
+                    <span class="settingsFieldDesc">A kiadás előtti verziók tartalmazhatnak olyan funkciókat, amik még nem voltak kellően tesztelve.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -251,7 +251,7 @@
             </div>
             <div class="settingsFileSelContainer">
                 <div class="settingsFileSelContent">
-                    <div class="settingsFieldTitle" id="settingsDataDirTitle">Data Directory</div>
+                    <div class="settingsFieldTitle" id="settingsDataDirTitle">Játék mappája</div>
                     <div class="settingsFileSelActions">
                         <div class="settingsFileSelIcon">
                             <svg class="settingsFileSelSVG">
@@ -264,89 +264,89 @@
                         </div>
                         <input class="settingsFileSelVal" type="text" value="null" cValue="DataDirectory" disabled>
                         <input class="settingsFileSelSel" id="settingsDataDirSel" type="file" webkitdirectory>
-                        <label class="settingsFileSelLabel" for="settingsDataDirSel">Choose Folder</label>
+                        <label class="settingsFileSelLabel" for="settingsDataDirSel">Kiválasztás</label>
                     </div>
                 </div>
-                <div class="settingsFileSelDesc">All game files and local Java installations will be stored in the data directory.<br>Screenshots and world saves are stored in the instance folder for the corresponding server configuration.</div>
+                <div class="settingsFileSelDesc">Minden játék fájl/beállítás ebben a mappában lesz eltárolva. </div>
             </div>
         </div>
         <div id="settingsTabAbout" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">About</span>
-                <span class="settingsTabHeaderDesc">View information and release notes for the current version.</span>
+                <span class="settingsTabHeaderText">Rólunk</span>
+                <span class="settingsTabHeaderDesc">Frissítési jegyzék a jelenlegi kiadáshoz.</span>
             </div>
             <div id="settingsAboutCurrentContainer">
                 <div id="settingsAboutCurrentContent">
                     <div id="settingsAboutCurrentHeadline">
                         <img id="settingsAboutLogo" src="./assets/images/NewHopeIcon.png">
-                        <span id="settingsAboutTitle">NewHope Launcher</span>
+                        <span id="settingsAboutTitle">NewHope indító</span>
                     </div>
                     <div id="settingsAboutCurrentVersion">
                         <div id="settingsAboutCurrentVersionCheck">&#10003;</div>
                         <div id="settingsAboutCurrentVersionDetails">
-                            <span id="settingsAboutCurrentVersionTitle">Stable Release</span>
+                            <span id="settingsAboutCurrentVersionTitle">Stabli kiadás</span>
                             <div id="settingsAboutCurrentVersionLine">
-                                <span id="settingsAboutCurrentVersionText">Version </span>
+                                <span id="settingsAboutCurrentVersionText">Verzió </span>
                                 <span id="settingsAboutCurrentVersionValue">0.0.1-alpha.12</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="settingsAboutButtons">
-                    <a href="https://github.com/pepyta/NewHopeLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Source (GitHub)</a>
+                    <a href="https://github.com/pepyta/NewHopeLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Forrás (GitHub)</a>
                     <!-- The following must be included in third-party usage. -->
                     <a href="https://github.com/WesterosCraftCode/ElectronLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Original Source</a>
-                    <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">DevTools Console</a>
+                    <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">Konzol</a>
                 </div>
             </div>
             <div class="settingsChangelogContainer">
                 <div class="settingsChangelogContent">
                     <div class="settingsChangelogHeadline">
-                        <div class="settingsChangelogLabel">Release Notes</div>
-                        <div class="settingsChangelogTitle">Changelog</div>
+                        <div class="settingsChangelogLabel">Frissítési jegyzék</div>
+                        <div class="settingsChangelogTitle">Változtatások</div>
                     </div>
                     <div class="settingsChangelogText">
-                        No Release Notes
+                        Nincs elérhető frissítési jegyzék.
                     </div>
                 </div>
                 <div class="settingsChangelogActions">
-                    <a class="settingsChangelogButton settingsAboutButton" href="#">View Release Notes on GitHub</a>
+                    <a class="settingsChangelogButton settingsAboutButton" href="#">Frissítési jegyzék megtekintése GitHub-on</a>
                 </div>
             </div>
         </div>
         <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Launcher Updates</span>
-                <span class="settingsTabHeaderDesc">Download, install, and review updates for the launcher.</span>
+                <span class="settingsTabHeaderText">Indító frissítések</span>
+                <span class="settingsTabHeaderDesc">Frissítések letöltése, telepítése és tesztelése az indítóhoz.</span>
             </div>
             <div id="settingsUpdateStatusContainer">
                 <div id="settingsUpdateStatusContent">
                     <div id="settingsUpdateStatusHeadline">
-                        <span id="settingsUpdateTitle">You Are Running the Latest Version</span>
+                        <span id="settingsUpdateTitle">A legfrissebb verziót használod</span>
                     </div>
                     <div id="settingsUpdateVersion">
                         <div id="settingsUpdateVersionCheck">&#10003;</div>
                         <div id="settingsUpdateVersionDetails">
-                            <span id="settingsUpdateVersionTitle">Stable Release</span>
+                            <span id="settingsUpdateVersionTitle">Stabil kiadás</span>
                             <div id="settingsUpdateVersionLine">
-                                <span id="settingsUpdateVersionText">Version </span>
+                                <span id="settingsUpdateVersionText">Verzió </span>
                                 <span id="settingsUpdateVersionValue">0.0.1-alpha.18</span>
                             </div>
                         </div>
                     </div>
                     <div id="settingsUpdateActionContainer">
-                        <button id="settingsUpdateActionButton">Check for Updates</button>
+                        <button id="settingsUpdateActionButton">Frissítések keresése</button>
                     </div>
                 </div>
             </div>
             <div class="settingsChangelogContainer">
                 <div class="settingsChangelogContent">
                     <div class="settingsChangelogHeadline">
-                        <div class="settingsChangelogLabel">What's New</div>
-                        <div class="settingsChangelogTitle">Update Release Notes</div>
+                        <div class="settingsChangelogLabel">Mi frissült?</div>
+                        <div class="settingsChangelogTitle">Kiadási jegyzék frissítése</div>
                     </div>
                     <div class="settingsChangelogText">
-                        No Release Notes
+                        Nincs frissítési jegyzék.
                     </div>
                 </div>
             </div>
