@@ -74,7 +74,7 @@ function showMainUI(data){
         // If this is enabled in a development environment we'll get ratelimited.
         // The relaunch frequency is usually far too high.
         if(!isDev && isLoggedIn){
-            validateSelectedAccount()
+            //validateSelectedAccount()
         }
 
         if(ConfigManager.isFirstLaunch()){
@@ -377,7 +377,7 @@ function setSelectedAccount(uuid){
     const authAcc = ConfigManager.setSelectedAccount(uuid)
     ConfigManager.save()
     updateSelectedAccount(authAcc)
-    validateSelectedAccount()
+    //validateSelectedAccount()
 }
 
 // Synchronous Listener

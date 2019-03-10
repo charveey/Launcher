@@ -53,7 +53,7 @@
     "appId": "newhopelauncher",
     "productName": "NewHope",
     "artifactName": "${productName}.${ext}",
-    "copyright": "Copyright © 2018 Daniel Scalzi, Gál Péter",
+    "copyright": "Copyright © 2018-2019 Daniel Scalzi, Gál Péter",
     "directories": {
       "buildResources": "build",
       "output": "dist"
