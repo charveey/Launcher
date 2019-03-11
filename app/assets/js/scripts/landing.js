@@ -92,7 +92,7 @@ document.getElementById('launch_button').addEventListener('click', function(e){
         asyncSystemScan(mcVersion)
     } else {
 
-        setLaunchDetails('Please wait..')
+        setLaunchDetails('Kérlek várj...')
         toggleLaunchArea(true)
         setLaunchPercentage(0, 100)
 
@@ -289,7 +289,7 @@ let extractListener
  */
 function asyncSystemScan(mcVersion, launchAfter = true){
 
-    setLaunchDetails('Please wait..')
+    setLaunchDetails('Kérlek várj...')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
@@ -376,7 +376,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result === true){
 
                 // Oracle JRE enqueued successfully, begin download.
-                setLaunchDetails('Downloading Java..')
+                setLaunchDetails('Java letöltése...')
                 sysAEx.send({task: 'execute', function: 'processDlQueues', argsArr: [[{id:'java', limit:1}]]})
 
             } else {
@@ -440,7 +440,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                         extractListener = null
                     }
 
-                    setLaunchDetails('Java Installed!')
+                    setLaunchDetails('Sikeresen telepítetted a Javát!')
 
                     if(launchAfter){
                         dlAsync()
@@ -454,7 +454,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
     })
 
     // Begin system Java scan.
-    setLaunchDetails('Checking system info..')
+    setLaunchDetails('Rendszerinformációk ellenőrzése...')
     sysAEx.send({task: 'execute', function: 'validateJava', argsArr: [ConfigManager.getDataDirectory()]})
 
 }
@@ -487,7 +487,7 @@ function dlAsync(login = true){
         }
     }
 
-    setLaunchDetails('Please wait..')
+    setLaunchDetails('Kérlek várj...')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
@@ -535,27 +535,27 @@ function dlAsync(login = true){
                 case 'distribution':
                     setLaunchPercentage(20, 100)
                     loggerLaunchSuite.log('Validated distibution index.')
-                    setLaunchDetails('Loading version information..')
+                    setLaunchDetails('Verzió információk betöltése...')
                     break
                 case 'version':
                     setLaunchPercentage(40, 100)
                     loggerLaunchSuite.log('Version data loaded.')
-                    setLaunchDetails('Validating asset integrity..')
+                    setLaunchDetails('Erőforrások ellenőrzése..')
                     break
                 case 'assets':
                     setLaunchPercentage(60, 100)
                     loggerLaunchSuite.log('Asset Validation Complete')
-                    setLaunchDetails('Validating library integrity..')
+                    setLaunchDetails('Könyvtárak ellenőrzése...')
                     break
                 case 'libraries':
                     setLaunchPercentage(80, 100)
                     loggerLaunchSuite.log('Library validation complete.')
-                    setLaunchDetails('Validating miscellaneous file integrity..')
+                    setLaunchDetails('Egyéb fájlok ellenőrzése...')
                     break
                 case 'files':
                     setLaunchPercentage(100, 100)
                     loggerLaunchSuite.log('File validation complete.')
-                    setLaunchDetails('Downloading files..')
+                    setLaunchDetails('Fájlok letöltése...')
                     break
             }
         } else if(m.context === 'progress'){
@@ -597,7 +597,7 @@ function dlAsync(login = true){
                         progressListener = null
                     }
 
-                    setLaunchDetails('Preparing to launch..')
+                    setLaunchDetails('Indítás előkészítése...')
                     break
             }
         } else if(m.context === 'error'){
@@ -607,13 +607,13 @@ function dlAsync(login = true){
                     
                     if(m.error.code === 'ENOENT'){
                         showLaunchFailure(
-                            'Download Error',
-                            'Could not connect to the file server. Ensure that you are connected to the internet and try again.'
+                            'Letöltési hiba',
+                            'Nem elérhető a letöltő szerver. Győződj meg arról, hogy csatlakozol az internetre, majd próbáld újra!'
                         )
                     } else {
                         showLaunchFailure(
-                            'Download Error',
-                            'Check the console (CTRL + Shift + i) for more details. Please try again.'
+                            'Letöltési hiba',
+                            'Ellenőrizd a konzolt (CTRL + Shift + i) a részletekért! Próbáld újra később!'
                         )
                     }
 
@@ -644,7 +644,7 @@ function dlAsync(login = true){
                 const authUser = ConfigManager.getSelectedAccount()
                 loggerLaunchSuite.log(`Sending selected account (${authUser.displayName}) to ProcessBuilder.`)
                 let pb = new ProcessBuilder(serv, versionData, authUser, remote.app.getVersion())
-                setLaunchDetails('Launching game..')
+                setLaunchDetails('Játék indítása...')
 
                 // Attach a temporary listener to the client output.
                 // Will wait for a certain bit of text meaning that
@@ -688,7 +688,7 @@ function dlAsync(login = true){
                     proc.stdout.on('data', tempListener)
                     proc.stderr.on('data', gameErrorListener)
 
-                    setLaunchDetails('Done. Enjoy the server!')
+                    setLaunchDetails('Kész! Jó játékot!')
 
                     // Init Discord Hook
                     const distro = DistroManager.getDistribution()
@@ -720,7 +720,7 @@ function dlAsync(login = true){
     // Begin Validations
 
     // Validate Forge files.
-    setLaunchDetails('Loading server information..')
+    setLaunchDetails('Szerver információk betöltése...')
 
     refreshDistributionIndex(true, (data) => {
         onDistroRefresh(data)
