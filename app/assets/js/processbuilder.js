@@ -455,7 +455,8 @@ class ProcessBuilder {
         }
 
         // Forge Specific Arguments
-        args = args.concat(this.versionData.arguments.game)
+        // Yet some unnecessary stuff
+        //args = args.concat(this.versionData.arguments.game)
 
         // Filter null values
         args = args.filter(arg => {
