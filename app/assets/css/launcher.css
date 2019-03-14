@@ -3626,6 +3626,7 @@ input:checked + .toggleSwitchSlider:before {
     border-radius: 2px;
     background: rgba(31, 140, 11, 0.8);
     padding: 0px 2px;
+    margin: 0 5px 0 0;
 }
 
 /* Star which indicates the default (main) server. */
