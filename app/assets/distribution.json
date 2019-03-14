@@ -28,7 +28,7 @@
         {
             "id": "NewHope_1.12.2",
             "name": "NewHope (1.12.2)",
-            "description": "A NewHope legfrissebb verziója. Erősen ajánlott ennek a használata!",
+            "description": "Egy régebbi kiadása a Minecraft-nak. Kompatibilitás miatt.",
             "icon": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/images/NewHopeIcon.ico",
             "version": "1.0.0",
             "address": "play.newhope.hu",

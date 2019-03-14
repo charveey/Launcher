@@ -853,7 +853,6 @@ function loadSelectedServerOnModsTab(){
             <span class="serverListingDescription">${serv.getDescription()}</span>
             <div class="serverListingInfo">
                 <div class="serverListingVersion">${serv.getMinecraftVersion()}</div>
-                <div class="serverListingRevision">${serv.getVersion()}</div>
                 ${serv.isMainServer() ? `<div class="serverListingStarWrapper">
                     <svg id="Layer_1" viewBox="0 0 107.45 104.74" width="20px" height="20px">
                         <defs>
