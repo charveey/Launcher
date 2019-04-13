@@ -37,7 +37,7 @@
                 "largeImageText": "A NewHope szerverén játszik",
                 "largeImageKey": "server"
             },
-            "mainServer": true,
+            "mainServer": false,
             "autoconnect": true,
             "modules": []
         }
