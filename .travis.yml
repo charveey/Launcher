@@ -31,9 +31,7 @@ cache:
   - $HOME/.cache/electron-builder
 
 script:
-  - |
-    npm run dist
-    fi
+  - npm run dist
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
