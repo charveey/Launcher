@@ -7,14 +7,11 @@ matrix:
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-        - ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true
         - CSC_IDENTITY_AUTO_DISCOVERY=false
 
     - os: linux
       services: docker
       language: generic
-      env:
-        - ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true
 
     - os: windows
       language: node_js
@@ -22,7 +19,6 @@ matrix:
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-        - ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true
 
 cache:
   directories:
@@ -31,7 +27,12 @@ cache:
   - $HOME/.cache/electron-builder
 
 script:
-  - npm run dist
+  - |
+    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      npm run dist:linux
+    else
+      npm run dist
+    fi
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
