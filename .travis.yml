@@ -26,14 +26,12 @@ cache:
   - $HOME/.cache/electron
   - $HOME/.cache/electron-builder
 
-script:
-  - |
-    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      npm run dist:linux
-    else
-      npm run dist
-    fi
+install:
+  - npm install
 
+script:
+  - npm run dist
+  
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
 
