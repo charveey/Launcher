@@ -8,9 +8,10 @@ function getCurrentPlatform(){
         case 'darwin':
             return Platform.MAC
         case 'linux':
-            return Platform.linux
+            return Platform.LINUX
         default:
-            return Platform.linux
+            console.log('Nem tudtuk megállapítani a build platformot. Kilépés...')
+            return undefined
     }
 }
 
