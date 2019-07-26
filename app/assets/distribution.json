@@ -22,7 +22,29 @@
             },
             "mainServer": true,
             "autoconnect": true,
-            "modules": []
+            "modules": [
+                {
+                    "id": "options.txt",
+                    "name": "Default Client Options",
+                    "type": "File",
+                    "artifact": {
+                        "size": 2153,
+                        "path": "options.txt",
+                        "url": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/options.txt"
+                    }
+                },
+                {
+                    "id": "servers.dat",
+                    "name": "Saved Client Servers",
+                    "type": "File",
+                    "artifact": {
+                        "size": 3147,
+                        "MD5": "a771a3ce5d2f2fd44f463adc50f4b77f",
+                        "path": "servers.dat",
+                        "url": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/servers.dat"
+                    }
+                }
+            ]
         }
     ]
 }
