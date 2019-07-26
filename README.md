@@ -6,8 +6,6 @@
 
 <p align="center">Csatlakozz a NewHope szerveréhez anélkül, hogy neked bármilyen beállítással bajlódnod kellene!</p>
 
-#### Segítségre van szükséged? [Nézd meg a Wikit!][wiki]
-
 ## Letöltések
 
 - [GitHub Releases](https://github.com/pepyta/NewHopeLauncher/releases)
@@ -23,19 +21,13 @@
 
 Ha a [Releases](https://github.com/pepyta/NewhopeLauncher/releases) közül töltöd le válaszd ki a számodra megfelelőt!
 
-| Platform | File |
-| -------- | ---- |
-| Windows x64 | `newhope-setup-VERSION.exe` |
-| macOS | `newhope-VERSION.dmg` |
-| Linux x64 | `newhope-VERSION-x86_64.AppImage` |
-
 ---
 
 ### Third-party usage disclaimer
 
-The code is made by Daniel Scalzi (WesterosCraft) and free to use if you express him.
+The code is made by Daniel Scalzi (dscalzi).
 
-[Original source code](https://github.com/WesterosCraftCode/ElectronLauncher), [Daniel Scalzi on GitHub](https://github.com/WesterosCraftCode)
+[Original source code](https://github.com/WesterosCraftCode/ElectronLauncher), [Daniel Scalzi on GitHub](https://github.com/dscalzi)
 
 ## Original terms of usage:
 
@@ -47,7 +39,6 @@ The code is made by Daniel Scalzi (WesterosCraft) and free to use if you express
 ## Elérhetőségek
 
 * [NewHope][newhope]
-* [Wiki][wiki]
 
 [![discord](https://discordapp.com/api/guilds/491282546529665034/embed.png?style=banner2)][discord]
 
@@ -57,4 +48,3 @@ The code is made by Daniel Scalzi (WesterosCraft) and free to use if you express
 
 [newhope]: https://newhope.hu/ 'NewHope.hu'
 [discord]: https://discord.gg/WprFHEC 'Discord'
-[wiki]: https://github.com/pepyta/NewHopeLauncher/wiki 'wiki'
