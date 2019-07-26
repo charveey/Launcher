@@ -12,7 +12,7 @@
 - [NewHope.hu](https://newhope.hu/launcher.php)
 
 #### Legújabb kiadás
-[![](https://img.shields.io/github/release/newhopemc/Launcherr.svg?style=flat-square)](https://github.com/newhopemc/Launcher/releases/latest)
+[![](https://img.shields.io/github/release/newhopemc/Launcher.svg?style=flat-square)](https://github.com/newhopemc/Launcher/releases/latest)
 
 #### Legújabb béta-kiadás
 [![](https://img.shields.io/github/release/newhopemc/Launcher/all.svg?style=flat-square)](https://github.com/newhopemc/Launcher/releases)
