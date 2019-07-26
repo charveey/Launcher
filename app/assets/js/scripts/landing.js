@@ -964,8 +964,9 @@ function initNews(){
                 const cached = ConfigManager.getNewsCache()
                 let newHash = crypto.createHash('sha1').update(lN.content).digest('hex')
                 let newDate = new Date(lN.date)
-                let isNew = false
+                let isNew = true
 
+                /*
                 if(cached.date != null && cached.content != null){
 
                     if(new Date(cached.date) >= newDate){
@@ -989,7 +990,7 @@ function initNews(){
                 } else {
                     isNew = true
                     showNewsAlert()
-                }
+                }*/
 
                 if(isNew){
                     ConfigManager.setNewsCache({
@@ -1101,6 +1102,7 @@ function loadNews(){
 
                         // Fix relative links in content.
                         let content = el.find('content\\:encoded').text()
+                        console.log(content)
                         let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
                         let matches
                         while((matches = regex.exec(content))){
