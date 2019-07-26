@@ -49,7 +49,7 @@ if(!isDev){
                 loggerAutoUpdaterSuccess.log('Új frissítések elérhetőek', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/pepyta/NewHopeLauncher/releases/download/v${info.version}/NewHope.dmg`
+                    info.darwindownload = `https://github.com/newhopemc/Launcher/releases/download/v${info.version}/NewHope.dmg`
                     showUpdateUI(info)
                 }
                 

@@ -5,13 +5,13 @@
         "smallImageText": "NewHope",
         "smallImageKey": "server"
     },
-    "rss": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/index.rss",
+    "rss": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/index.rss",
     "servers": [
         {
             "id": "NewHope_1.14.4",
             "name": "Verzió 1.14.4 (legfrissebb)",
             "description": "A legfrissebb verzió, amellyel csatlakothatsz a szerverre.",
-            "icon": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/images/NewHopeIcon.ico",
+            "icon": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/images/NewHopeIcon.ico",
             "version": "1.0.0",
             "address": "play.newhope.hu",
             "minecraftVersion": "1.14.4",
