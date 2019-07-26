@@ -622,3 +622,45 @@ p {
     flex-direction: column;
     align-items: center;
 }
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Loading Element (app.ejs)                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Loading container, placed above everything. */
+#loadingContainer {
+    position: absolute;
+    z-index: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 22px);
+}
+
+/* Loading content container. */
+#loadingContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Spinner container. */
+#loadSpinnerContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stationary image for the spinner. */
+#loadCenterImage {
+    position: absolute;
+    width: 277px;
+    height: auto;
+}
