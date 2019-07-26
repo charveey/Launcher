@@ -10,7 +10,7 @@ function getCurrentPlatform(){
         case 'linux':
             return Platform.LINUX
         default:
-            console.log('Nem tudtuk megállapítani a build platformot. Kilépés...')
+            console.error('Cannot resolve current platform!')
             return undefined
     }
 }
@@ -18,7 +18,7 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'newhope',
+        appId: 'newhopelauncher',
         productName: 'NewHope',
         artifactName: '${productName}.${ext}',
         copyright: 'Copyright © 2018-2019 Daniel Scalzi, Gál Péter',
