@@ -57,8 +57,7 @@ function setLaunchDetails(details){
  * @param {number|string} percent Optional. The percentage to display on the progress label.
  */
 function setLaunchPercentage(value, max, percent = ((value/max)*100)){
-    launch_progress.setAttribute('max', max)
-    launch_progress.setAttribute('value', value)
+    launch_progress.setAttribute('style', "width: "+value+"%")
     launch_progress_label.innerHTML = percent + '%'
 }
 
@@ -115,12 +114,13 @@ document.getElementById('settingsMediaButton').onclick = (e) => {
 }
 
 // Bind avatar overlay button.
+/*
 document.getElementById('avatarOverlay').onclick = (e) => {
     prepareSettings()
     switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
-        settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
+        //settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
     })
-}
+}*/
 
 // Bind selected account
 function updateSelectedAccount(authUser){
@@ -130,7 +130,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://minotar.net/avatar/${authUser.username}?scale=3&default=MHF_Steve&overlay')`
+            document.getElementById('avatarContainer').src = `https://minotar.net/avatar/${authUser.username}?scale=3&default=MHF_Steve&overlay`
         }
     }
     user_text.innerHTML = username
@@ -144,7 +144,7 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.getID() : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'No Server Selected')
+    server_selection_button.innerHTML = (serv != null ? serv.getName() : 'No Server Selected')
     if(getCurrentView() === VIEWS.settings){
         animateModsTabRefresh()
     }
@@ -815,7 +815,7 @@ function slide_(up){
 }
 
 // Bind news button.
-document.getElementById('newsButton').onclick = () => {
+/*document.getElementById('newsButton').onclick = () => {
     // Toggle tabbing.
     if(newsActive){
         $('#landingContainer *').removeAttr('tabindex')
@@ -832,7 +832,7 @@ document.getElementById('newsButton').onclick = () => {
     }
     slide_(!newsActive)
     newsActive = !newsActive
-}
+}*/
 
 // Array to store article meta.
 let newsArr = null

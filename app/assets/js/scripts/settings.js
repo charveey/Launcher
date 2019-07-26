@@ -229,16 +229,16 @@ function setupSettingsTabs(){
  * @param {boolean} fade Optional. True to fade transition.
  */
 function settingsNavItemListener(ele, fade = true){
-    if(ele.hasAttribute('selected')){
+    if(ele.classList.contains('active')){
         return
     }
     const navItems = document.getElementsByClassName('settingsNavItem')
     for(let i=0; i<navItems.length; i++){
-        if(navItems[i].hasAttribute('selected')){
-            navItems[i].removeAttribute('selected')
+        if(navItems[i].classList.contains('active')){
+            navItems[i].classList.remove('active')
         }
     }
-    ele.setAttribute('selected', '')
+    ele.classList.add('active')
     let prevTab = selectedSettingsTab
     selectedSettingsTab = ele.getAttribute('rSc')
 
@@ -318,7 +318,7 @@ function bindAuthAccountSelect(){
             for(let i=0; i<selectBtns.length; i++){
                 if(selectBtns[i].hasAttribute('selected')){
                     selectBtns[i].removeAttribute('selected')
-                    selectBtns[i].innerHTML = 'Select Account'
+                    selectBtns[i].innerHTML = 'Felhasználó kiválasztása'
                 }
             }
             val.setAttribute('selected', '')
@@ -340,10 +340,10 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    'Warning<br>This is Your Last Account',
-                    'In order to use the launcher you must be logged into at least one account. You will need to login again after.<br><br>Are you sure you want to log out?',
-                    'I\'m Sure',
-                    'Cancel'
+                    'Figyelj oda!',
+                    'Ez az utolsó felhasználói fiókod, amivel be vagy jelentkezbe. Ha kijelentkezel most, akkor újra be kell jelentkezned.',
+                    'Tovább',
+                    'Mégse'
                 )
                 setOverlayHandler(() => {
                     processLogOut(val, isLastAccount)
@@ -423,21 +423,19 @@ function populateAuthAccounts(){
 
     authKeys.map((val) => {
         const acc = authAccounts[val]
-        authAccountStr += `<div class="settingsAuthAccount" uuid="${acc.uuid}">
-            <div class="settingsAuthAccountLeft">
-                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://minotar.net/avatar/${acc.username}?scale=3&default=MHF_Steve&overlay">
-            </div>
-            <div class="settingsAuthAccountRight">
-                <div class="settingsAuthAccountDetails">
-                    <div class="settingsAuthAccountDetailPane">
-                        <div class="settingsAuthAccountDetailTitle">Felhasználónév</div>
-                        <div class="settingsAuthAccountDetailValue">${acc.displayName}</div>
+        authAccountStr += `
+        <div class="settingsAuthAccount" uuid="${acc.uuid}">
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img alt="${acc.displayName}" src="https://minotar.net/avatar/${acc.username}?scale=3&default=MHF_Steve&overlay">
+                        <span class="card-title">${acc.displayName}</span>
                     </div>
-                </div>
-                <div class="settingsAuthAccountActions">
-                    <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Kiválaszott felhasználó &#10004;' : '>Felhasználó kiválasztása'}</button>
-                    <div class="settingsAuthAccountWrapper">
-                        <button class="settingsAuthAccountLogOut">Kijelentkezés</button>
+                    <div class="card-action">
+                        <a href="#" class="settingsAuthAccountSelect newhope-color-text" ${selectedUUID === acc.uuid ? 'selected>Kiválaszott felhasználó &#10004;' : '>Felhasználó kiválasztása'}</a>
+                        <div class="settingsAuthAccountWrapper">
+                            <a href="#" class="settingsAuthAccountLogOut newhope-color-text">Kijelentkezés</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1320,6 +1318,12 @@ function prepareSettings(first = false) {
     prepareJavaTab()
     prepareAboutTab()
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.scrollspy')
+    var instances = M.ScrollSpy.init(elems, {})
+})
+
 
 // Prepare the settings UI on startup.
 //prepareSettings(true)

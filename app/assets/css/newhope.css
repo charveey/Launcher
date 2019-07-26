@@ -1,0 +1,624 @@
+
+/*******************************************************************************
+ *                                                                             *
+ * Element Styles                                                              *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Reset body, html, and div presets. */
+body, html, div {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main {
+    min-height: calc(100vh - 22px) !important;
+}
+
+/* Reset p presets. */
+p {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+
+.card.horizontal .card-image img,
+.card,
+.btn {
+    border-radius: 7px !important;
+}
+
+.card-action {
+    border-radius: 0 0 7px 7px !important;
+}
+
+.card .card-image img {
+    border-radius: 7px 7px 0 0 !important;
+}
+
+/*body {
+    background: url('./../images/backgrounds/0.jpg') no-repeat center center fixed;
+    background-size: cover;
+}*/
+
+.newhope-color {
+    background-color: #5669bc !important;
+}
+
+.newhope-color-text {
+    color: #5669bc !important;
+}
+
+.card-title {
+    font-size: 1.28rem !important;
+}
+
+.card-title.use-same-size,
+.card-title::first-line {
+    font-size: 1.92rem !important;
+}
+
+.table-of-contents a {
+    color: #fff !important;
+}
+
+.table-of-contents a:hover {
+    border-left: 1px solid #5669bc !important;
+}
+
+.table-of-contents a.active {
+    border-left: 2px solid #5669bc !important;
+}
+
+.settingsTab {
+    padding: 0 5px !important;
+}
+
+.launcher_footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 90px;
+    background-color: #333D6E !important;
+}
+
+.launcher_footer .card,
+.launcher_footer .btn {
+    margin-top: -25px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Custom input field colors                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #5669bc !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #5669bc !important;
+    box-shadow: 0 1px 0 0 #5669bc !important;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #5669bc !important;
+    box-shadow: 0 1px 0 0 #5669bc !important;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #5669bc !important;
+    box-shadow: 0 1px 0 0 #5669bc !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #5669bc !important;
+}
+
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right-color: #5669bc !important;
+    border-bottom-color: #5669bc !important;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Frame Styles (frame.ejs)                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Frame Bar */
+#frameBar {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 1s ease;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    -webkit-user-select: none;
+}
+
+/* Undraggable region on the top of the frame. */
+#frameResizableTop {
+    height: 2px;
+    width: 100%;
+    -webkit-app-region: no-drag;
+}
+
+/* Flexbox to wrap the main frame content. */
+#frameMain {
+    display: flex;
+    height: 20px
+}
+
+/* Undraggable region on the left and right of the frame. */
+.frameResizableVert {
+    width: 2px;
+    -webkit-app-region: no-drag;
+}
+
+/* Main frame content for windows. */
+#frameContentWin {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+
+/* Main frame content for darwin. */
+#frameContentDarwin {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+
+/* Frame logo (windows only). */
+#frameImageDock {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#frameImage {
+    height: 15px;
+    filter: grayscale(100%);
+}
+
+/* Windows frame button dock. */
+#frameButtonDockWin {
+    -webkit-app-region: no-drag !important;
+    position: relative;
+    top: -2px;
+    right: -2px;
+    height: 22px;
+}
+#frameButtonDockWin > .frameButton:not(:first-child) {
+    margin-left: -4px;
+}
+
+/* Darwin frame button dock: NaN; */
+#frameButtonDockDarwin {
+    -webkit-app-region: no-drag !important;
+    position: relative;
+    top: -1px;
+    right: -1px;
+}
+
+/* Windows Frame Button Styles. */
+.frameButton {
+    background: none;
+    border: none;
+    height: 22px;
+    width: 39px;
+    cursor: pointer;
+}
+.frameButton:hover,
+.frameButton:focus {
+    background: rgba(189, 189, 189, 0.43);
+}
+.frameButton:active {
+    background: rgba(156, 156, 156, 0.43);
+}
+.frameButton:focus {
+    outline: 0px;
+}
+
+/* Close button is red. */
+#frameButton_close:hover,
+#frameButton_close:focus {
+    background: rgba(255, 53, 53, 0.61) !important;
+}
+#frameButton_close:active {
+    background: rgba(235, 0, 0, 0.61) !important;
+}
+
+/* Darwin Frame Button Styles. */
+.frameButtonDarwin {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 0px;
+    margin-left: 5px;
+    -webkit-app-region: no-drag !important;
+    cursor: pointer;
+}
+.frameButtonDarwin:focus {
+    outline: 0px;
+}
+
+#frameButtonDarwin_close {
+    background-color: #e74c32;
+}
+#frameButtonDarwin_close:hover,
+#frameButtonDarwin_close:focus {
+    background-color: #FF9A8A;
+}
+#frameButtonDarwin_close:active {
+    background-color: #ff8d7b;
+}
+
+#frameButtonDarwin_minimize {
+    background-color: #fed045;
+}
+#frameButtonDarwin_minimize:hover,
+#frameButtonDarwin_minimize:focus {
+    background-color: #FFE9A9;
+}
+#frameButtonDarwin_minimize:active {
+    background-color: #ffde7b;
+}
+
+#frameButtonDarwin_restoredown {
+    background-color: #96e734;
+}
+#frameButtonDarwin_restoredown:hover,
+#frameButtonDarwin_restoredown:focus {
+    background-color: #D6FFA6;
+}
+#frameButtonDarwin_restoredown:active {
+    background-color: #bfff76;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Login View (login.ejs)                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Styles for dimmer login span. */
+.loginSpanDim {
+    font-size: 12px;
+    color: #848484;
+    font-weight: bold;
+}
+
+/* Main login container. */
+#loginContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: filter 0.25s ease;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+/* Login cancel button styles. */
+#loginCancelContainer {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+/* Login cancel button styles. */
+#loginCancelButton {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+#loginCancelButton:hover #loginCancelIcon,
+#loginCancelButton:hover #loginCancelText,
+#loginCancelButton:focus #loginCancelIcon,
+#loginCancelButton:focus #loginCancelText {
+    text-shadow: 0px 0px 20px white;
+}
+#loginCancelButton:hover #loginCancelIcon,
+#loginCancelButton:focus #loginCancelIcon {
+    box-shadow: 0px 0px 20px white;
+}
+#loginCancelButton:active #loginCancelIcon,
+#loginCancelButton:active #loginCancelText {
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    border-color: rgba(255, 255, 255, 0.75);
+}
+#loginCancelButton:active #loginCancelIcon {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.75);
+}
+#loginCancelButton:disabled {
+    pointer-events: none;
+}
+#loginCancelButton:disabled #loginCancelIcon,
+#loginCancelButton:disabled #loginCancelText {
+    color: rgba(255, 255, 255, 0.75);
+    border-color: rgba(255, 255, 255, 0.75);
+}
+
+/* The X in a circle icon for the cancel button. */
+#loginCancelIcon {
+    border-radius: 50%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    font-size: 19px;
+    line-height: 30px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    transition: 0.25s ease;
+}
+/* Text for the login cancel button. */
+#loginCancelText {
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+/* Login content wrapper. */
+#loginContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0px 25px;
+}
+
+@media screen and (min-width: 601px) {
+    #loginContent .card {
+        width: 50%;
+    }
+}
+
+
+
+/* Main login container. */
+#settingsContainer {
+    transition: filter 0.25s ease;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+/* Settings tab shared styles. */
+.settingsTab {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.settingsTab::-webkit-scrollbar {
+    width: 2px;
+}
+.settingsTab::-webkit-scrollbar-track {
+    display: none;
+}
+.settingsTab::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.50);
+}
+
+.container .row {
+    margin-bottom: 0 !important;
+}
+
+.col .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Overlay View (overlay.ejs)                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+/* * *
+* Overlay View (Main Content)
+* * */
+
+/* Overlay container, placed over the main div. */
+#overlayContainer {
+    position: absolute;
+    z-index: 500;
+    top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 22px);
+    background: rgba(0, 0, 0, 0.50);
+}
+
+/* Main overlay content. */
+#overlayContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-between;*/
+    width: 300px;
+    /*height: 35%;*/
+    box-sizing: border-box;
+    padding: 15px 0px;
+    /* background-color: #424242; */
+    text-align: center;
+}
+
+/* Main overlay content anchor styles. */
+#overlayContent a,
+#overlayDismiss {
+    transition: 0.25s ease;
+}
+
+/* Add spacing between overlay content elements. */
+#overlayContent > *:first-child {
+    margin-top: 0px !important;
+}
+#overlayContent > *:last-child {
+    margin-bottom: 0px !important;
+}
+#overlayContent > * {
+    margin: 8px 0px;
+}
+
+/* Div which contains action buttons. */
+#overlayActionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Content container which contains the server select actions. */
+#serverSelectActions,
+#accountSelectActions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+/* Range Slider styles. */
+.rangeSlider {
+    /*width: 35%;*/
+    height: 5px;
+    margin: 15px 0px;
+    background: grey;
+    border-radius: 3px;
+    position: relative;
+}
+.rangeSliderBar {
+    position: absolute;
+    background: #8be88b;
+    /*width: 50%;*/
+    height: 5px;
+    border-radius: 3px 0px 0px 3px;
+    transition: background 0.25s ease;
+}
+.rangeSliderTrack {
+    position: absolute;
+    top: -7.5px;
+    width: 7px;
+    height: 20px;
+    background: #5669bc;
+    border-radius: 3px;
+    left: 50%;
+    cursor: ew-resize;
+}
+
+#settingsAboutLogo {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+
+/* * *
+* Settings View (Java Tab)
+* * */
+
+/* Style links on the Java tab. */
+#settingsTabJava a,
+.settingsChangelogText a {
+    color: rgba(202, 202, 202, 0.75);
+    transition: 0.25s ease;
+    outline: none;
+}
+#settingsTabJava a:hover,
+#settingsTabJava a:focus,
+.settingsChangelogText a:hover,
+.settingsChangelogText a:focus {
+    color: rgba(255, 255, 255, 0.75);
+}
+#settingsTabJava a:active,
+.settingsChangelogText a:active {
+    color: rgba(165, 165, 165, 0.75);
+}
+
+/* Main container for memory management. */
+#settingsMemoryContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+    margin-bottom: 20px;
+}
+
+/* Memory management title. */
+#settingsMemoryTitle {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Memory management content. */
+#settingsMemoryContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#settingsMemoryContentLeft {
+    width: 69%;
+}
+#settingsMemoryContentRight {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+/* Header for memory sliders. */
+.settingsMemoryHeader {
+    font-size: 14px;
+}
+
+/* Wrapper container for a memory slider and label. */
+.settingsMemoryActionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Label which displays a memory slider's value. */
+.settingsMemoryLabel {
+    font-size: 14px;
+    margin-right: 2%;
+}
+
+/* Range sliders for min and max memory settings. */
+#settingsMaxRAMRange,
+#settingsMinRAMRange {
+    width: 85%;
+}
+
+/* Memory status elements. */
+#settingsMemoryStatus {
+    display: flex;
+    flex-direction: column;
+}
+#settingsMemoryStatus > .settingsMemoryStatusContainer:not(:last-child){
+    margin-bottom: 50%;
+}
+.settingsMemoryStatusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

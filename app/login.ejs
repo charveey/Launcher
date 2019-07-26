@@ -1,37 +1,58 @@
 <div id="loginContainer" style="display: none;">
-    <div id="loginCancelContainer" style="display: none;">
-        <button id="loginCancelButton">
-            <div id="loginCancelIcon">X</div>
-            <span id="loginCancelText">Bezátás</span>
-        </button>
+    <div class="fixed-action-btn" id="loginCancelButton" style="display: none;">
+        <a class="btn-floating btn-large newhope-color waves-effect waves-light">
+            <i class="large material-icons">close</i>
+        </a>
     </div>
     <div id="loginContent">
-        <form id="loginForm">
-            <img id="loginImageSeal" src="assets/images/NewHopeWideLogo.png"/>
-            <span id="loginSubheader">BEJELENTKEZÉS</span>
-            <div class="loginFieldContainer">
-                <span class="loginErrorSpan" id="loginEmailError">* Helytelen érték</span>
-                <input id="loginUsername" class="loginField" type="text" placeholder="Felhasználónév"/>
-            </div>
-            <button id="loginButton" disabled>
-                <div id="loginButtonContent">
-                    BEJELENTKEZÉS
-                    <svg id="loginSVG" viewBox="0 0 24.87 13.97">
-                        <defs>
-                            <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
-                        </defs>
-                        <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
-                    </svg>
-                    <div class="circle-loader">
-                        <div class="checkmark draw"></div>
+        <center
+            style="position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);width: 100%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <div class="card-title use-same-size">
+                                    Add meg a bejelentkezési adataidat!
+                                </div>
+                                <form id="loginForm">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="loginUsername" type="text">
+                                            <label for="loginUsername">Felhasználónév</label>
+                                            <span class="helper-text red-text" id="loginEmailError"></span>
+                                        </div>
+                                        <button id="loginButton" disabled
+                                            class="col s12 btn btn-large waves-effect waves-light newhope-color">
+                                            <div id="loginButtonContent">
+                                                BEJELENTKEZÉS
+                                                <svg id="loginSVG" viewBox="0 0 24.87 13.97">
+                                                    <defs>
+                                                        <style>
+                                                            .arrowLine {
+                                                                fill: none;
+                                                                stroke: #FFF;
+                                                                stroke-width: 2px;
+                                                                transition: 0.25s ease;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <polyline class="arrowLine"
+                                                        points="0.71 13.26 12.56 1.41 24.16 13.02" />
+                                                </svg>
+                                                <div class="circle-loader">
+                                                    <div class="checkmark draw"></div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <!--<div class="spinningCircle" id="loginSpinner"></div>-->
                 </div>
-            </button>
-            <div id="loginDisclaimer">
-                <p class="loginDisclaimerText">NewHope is not affiliated with Mojang AB.</p>
             </div>
-        </form>
+        </center>
     </div>
     <script src="./assets/js/scripts/login.js"></script>
 </div>

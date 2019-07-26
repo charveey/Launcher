@@ -8,36 +8,19 @@
     "rss": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/index.rss",
     "servers": [
         {
-            "id": "NewHope_1.12.2",
+            "id": "NewHope_1.14.4",
             "name": "NewHope (legfrissebb)",
-            "description": "Egy régebbi kiadása a Minecraft-nak. Kompatibilitás miatt.",
+            "description": "A legfrissebb verzió, amellyel csatlakothatsz a szerverre.",
             "icon": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/images/NewHopeIcon.ico",
             "version": "1.0.0",
             "address": "play.newhope.hu",
-            "minecraftVersion": "1.12.2",
+            "minecraftVersion": "1.14.4",
             "discord": {
                 "shortId": "NewHope",
                 "largeImageText": "A NewHope szerverén játszik",
                 "largeImageKey": "server"
             },
             "mainServer": true,
-            "autoconnect": true,
-            "modules": []
-        },
-        {
-            "id": "NewHope_1.13.2",
-            "name": "NewHope (béta)",
-            "description": "A NewHope tesztelési fázisában lévő verziója.",
-            "icon": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/images/NewHopeIconBeta.png",
-            "version": "1.0.0",
-            "address": "play.newhope.hu",
-            "minecraftVersion": "1.13.2",
-            "discord": {
-                "shortId": "NewHope",
-                "largeImageText": "A NewHope szerverén játszik",
-                "largeImageKey": "server"
-            },
-            "mainServer": false,
             "autoconnect": true,
             "modules": []
         }

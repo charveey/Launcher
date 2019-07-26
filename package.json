@@ -1,13 +1,13 @@
 {
   "name": "newhopelauncher",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "productName": "NewHope",
   "description": "NewHope saját launchere",
   "author": "Daniel Scalzi (https://github.com/dscalzi/), Gál Péter (https://github.com/pepyta/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/pepyta/NewHopeLauncher",
+  "homepage": "https://github.com/newhopemc/Launcher",
   "bugs": {
-    "url": "https://github.com/pepyta/NewHopeLauncher/issues"
+    "url": "https://github.com/newhopemc/Launcher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -15,10 +15,10 @@
     "start": "electron .",
     "cilinux": "electron-builder --linux --win",
     "cidarwin": "electron-builder --mac",
-    "dist": "cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true electron-builder",
-    "dist:win": "npm run dist -- --win --x64",
-    "dist:mac": "npm run dist -- --mac",
-    "dist:linux": "npm run dist -- --linux --x64",
+    "dist": "cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true node build.js",
+    "dist:win": "npm run dist -- WINDOWS",
+    "dist:mac": "npm run dist -- MAC",
+    "dist:linux": "npm run dist -- LINUX",
     "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
@@ -48,58 +48,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pepyta/NewHopeLauncher.git"
-  },
-  "build": {
-    "appId": "newhopelauncher",
-    "productName": "NewHope",
-    "artifactName": "${productName}.${ext}",
-    "copyright": "Copyright © 2018-2019 Daniel Scalzi, Gál Péter",
-    "directories": {
-      "buildResources": "build",
-      "output": "dist"
-    },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": "x64"
-        }
-      ],
-      "icon": "build/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": true,
-      "allowElevation": true,
-      "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico",
-      "allowToChangeInstallationDirectory": true
-    },
-    "mac": {
-      "target": "dmg",
-      "category": "public.app-category.games",
-      "icon": "build/icon.icns"
-    },
-    "linux": {
-      "target": "AppImage",
-      "maintainer": "Gál Péter",
-      "vendor": "newhopelauncher",
-      "synopsis": "Saját indító a NewHopehoz",
-      "description": "NewHope saját launchere",
-      "category": "Game"
-    },
-    "deb": {
-      "compression": "xz",
-      "packageCategory": "Games",
-      "priority": "optional"
-    },
-    "compression": "maximum",
-    "files": [
-      "!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json}"
-    ],
-    "extraResources": [
-      "libraries"
-    ],
-    "asar": true
   }
 }

@@ -1,4 +1,5 @@
 <div id="landingContainer" style="display: none;">
+    <!--
     <div id="upper">
         <div id="left">
             <div id="image_seal_container">
@@ -68,7 +69,6 @@
             <div class="bot_wrapper">
                 <div id="content">
                     <button id="newsButton">
-                        <!--<img src="assets/images/icons/arrow.svg" id="newsButtonSVG"/>-->
                         <div id="newsButtonAlert" style="display: none;"></div>
                         <svg id="newsButtonSVG" viewBox="0 0 24.87 13.97">
                             <defs>
@@ -141,7 +141,6 @@
             <div id="newsArticleContainer">
                 <div id="newsArticleContent">
                     <div id="newsArticleContentScrollable">
-                        <!-- Article Content -->
                     </div>
                 </div>
             </div>
@@ -156,6 +155,156 @@
             </div>
             <div id="newsErrorNone" style="display: none;">
                 <span id="nENoneSpan" class="newsErrorContent">Nincsenek hírek</span>
+            </div>
+        </div>
+    </div>
+-->
+    <!-- TODO: Hírek -->
+    <!--
+    <div class="container">
+        <div class="row">
+
+            <div id="newsContainer">
+                <div id="newsContent" article="-1" style="display: none;">
+                    <div id="newsStatusContainer">
+                        <div id="newsStatusContent">
+                            <div id="newsTitleContainer">
+                                <a id="newsArticleTitle" href="#">Lorem Ipsum</a>
+                            </div>
+                            <div id="newsMetaContainer">
+                                <div id="newsArticleDateWrapper">
+                                    <span id="newsArticleDate">Mar 15, 44 BC, 9:14 AM</span>
+                                </div>
+                                <div id="newsArticleAuthorWrapper">
+                                    <span id="newsArticleAuthor">by Cicero</span>
+                                </div>
+                                <a href="#" id="newsArticleComments">0 Comments</a>
+                            </div>
+                        </div>
+                        <div id="newsNavigationContainer">
+                            <button id="newsNavigateLeft">
+                                <svg id="newsNavigationLeftSVG" viewBox="0 0 24.87 13.97">
+                                    <defs>
+                                        <style>
+                                            .arrowLine {
+                                                fill: none;
+                                                stroke: #FFF;
+                                                stroke-width: 2px;
+                                                transition: 0.25s ease;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02" />
+                                </svg>
+                            </button>
+                            <span id="newsNavigationStatus">1 of 1</span>
+                            <button id="newsNavigateRight">
+                                <svg id="newsNavigationRightSVG" viewBox="0 0 24.87 13.97">
+                                    <defs>
+                                        <style>
+                                            .arrowLine {
+                                                fill: none;
+                                                stroke: #FFF;
+                                                stroke-width: 2px;
+                                                transition: 0.25s ease;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="newsArticleContainer">
+                        <div id="newsArticleContent">
+                            <div id="newsArticleContentScrollable">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="newsErrorContainer">
+                    <div id="newsErrorLoading">
+                        <span id="nELoadSpan" class="newsErrorContent">Hírek lekérdezése..</span>
+                    </div>
+                    <div id="newsErrorFailed" style="display: none;">
+                        <span id="nEFailedSpan" class="newsErrorContent">Hírek betöltése sikertelen</span>
+                        <button id="newsErrorRetry">Próbáld újra!</button>
+                    </div>
+                    <div id="newsErrorNone" style="display: none;">
+                        <span id="nENoneSpan" class="newsErrorContent">Nincsenek hírek</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container">
+        <div class="row center-align">
+            <div class="col s12">
+                <img src="assets/images/NewHopeWideLogo.png" class="responsive-img">
+            </div>
+            <div class="col s12" style="display:none;" id="updateAvailableNotification">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <div class="card-title">
+                            Új frissítés elérhető!
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a class="newhope-color-text" id="updateAvailableNotificationButton" href="#">Telepítés és újraindítás</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brown launcher_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s4">
+                    <button class="col s12 mediaButton btn btn-large newhope-color waves-effect waves-light"
+                        id="settingsMediaButton">
+                        <i class="material-icons left">settings</i> Beállítások
+                    </button>
+                </div>
+                <div class="col s4">
+                    <div id="launch_content" class="center-align">
+                        <button id="launch_button"
+                            class="btn btn-large waves-effect waves-light newhope-color hoverable col s12">JÁTÉK!</button>
+
+                        <a id="server_selection_button" class="bot_label white-text col s12 center-align" href="#">Nincs
+                            szerver
+                            kiválasztva!</a>
+                    </div>
+
+                    <div class="card hoverable col s12" id="launch_details" style="display: none;">
+                        <div class="card-content col s12 center-align">
+                            <div id="launch_details_left">
+                                <span id="launch_progress_label" style="display:none;">0%</span>
+                                <div class="bot_divider"></div>
+                            </div>
+                            <div id="launch_details_right" class="col s12">
+                                <div class="progress white" id="launch_progress_outer">
+                                    <div class="determinate newhope-color" id="launch_progress" style="width: 0%">
+                                    </div>
+                                </div>
+                                <span id="launch_details_text" class="bot_label">Kérlek várj..</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card horizontal valign-wrapper">
+                        <div class="card-image">
+                            <img id="avatarContainer" style="max-width: 54px !important;">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content" style="padding: 0 24px !important;">
+                                <div class="truncate">Bejelentkezett felhasználó:</div>
+                                <b><span id="user_text">Username</span></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
