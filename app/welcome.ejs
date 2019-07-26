@@ -3,23 +3,44 @@
         <div class="cloudTop"></div>
         <div class="cloudBottom"></div>
     </div>-->
-    <div id="welcomeContent">
-        <img id="welcomeImageSeal" src="assets/images/NewHopeWideLogo.png"/>
-        <span id="welcomeHeader">Üdvözöllek a NewHopeon!</span>
-        <span id="welcomeDescription">A NewHope egy magyar lobby szerver, amit egy nagyobb baráti társaság üzemeltet a saját szórakoztatásukra. Reméljük tudunk okozni számodra is egy-két vidám percet!</span>
-        <br>
-        <span id="welcomeDescCTA">Már csak pár kattintás!</span>
-        <button id="welcomeButton">
-            <div id="welcomeButtonContent">
-                Tovább
-                <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
-                    <defs>
-                        <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
-                    </defs>
-                    <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
-                </svg>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="section center-align">
+                    <img id="welcomeImageSeal" class="responsive-img" src="assets/images/NewHopeWideLogo.png">
+                </div>
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <span id="welcomeHeader">Üdvözöllek a NewHopeon!</span>
+                        </div>
+                        <span id="welcomeDescription">A NewHope egy magyar lobby szerver, amit egy nagyobb baráti
+                            társaság üzemeltet a saját szórakoztatásukra. Reméljük tudunk okozni számodra is egy-két
+                            vidám percet!</span>
+                    </div>
+                </div>
+                <div class="section center-align">
+                    <button class="btn btn-large newhope-color waves-effect waves-light" id="welcomeButton">
+                        <div id="welcomeButtonContent">
+                            Tovább
+                            <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
+                                <defs>
+                                    <style>
+                                        .arrowLine {
+                                            fill: none;
+                                            stroke: #FFF;
+                                            stroke-width: 2px;
+                                            transition: 0.25s ease;
+                                        }
+                                    </style>
+                                </defs>
+                                <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
             </div>
-        </button>
+        </div>
     </div>
     <script src="./assets/js/scripts/welcome.js"></script>
 </div>
