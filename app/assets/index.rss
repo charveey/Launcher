@@ -15,11 +15,7 @@
       <guid>https://newhope.hu/</guid>
       <author>invalid@example.com (pepyta)</author>
       <dc:creator>pepyta</dc:creator>
-      <content:encoded>
-        <![CDATA[
-        <p>content</p>
-        ]]>
-      </content:encoded>
+      <content:encoded><![CDATA[<p>content</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
