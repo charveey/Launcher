@@ -127,8 +127,8 @@ function resolveError(err){
     // Node error => err.code | err.message
     if(err.cause != null && err.cause === 'UserMigratedException') {
         return {
-            title: 'Error During Login:<br>Invalid Credentials',
-            desc: 'You\'ve attempted to login with a migrated account. Try again using the account email as the username.'
+            title: Lang.queryJS('login.error.userMigrated.title'),
+            desc: Lang.queryJS('login.error.userMigrated.desc')
         }
     } else {
         if(err.error != null){
@@ -136,13 +136,13 @@ function resolveError(err){
                 if(err.errorMessage != null){
                     if(err.errorMessage === 'Invalid credentials. Invalid username or password.'){
                         return {
-                            title: 'Error During Login:<br>Invalid Credentials',
-                            desc: 'The email or password you\'ve entered is incorrect. Please try again.'
+                            title: Lang.queryJS('login.error.invalidCredentials.title'),
+                            desc: Lang.queryJS('login.error.invalidCredentials.desc')
                         }
                     } else if(err.errorMessage === 'Invalid credentials.'){
                         return {
-                            title: 'Error During Login:<br>Too Many Attempts',
-                            desc: 'There have been too many login attempts with this account recently. Please try again later.'
+                            title: Lang.queryJS('login.error.rateLimit.title'),
+                            desc: Lang.queryJS('login.error.rateLimit.desc')
                         }
                     }
                 }
@@ -153,14 +153,14 @@ function resolveError(err){
                 if(err.code === 'ENOENT'){
                     // No Internet.
                     return {
-                        title: 'Error During Login:<br>No Internet Connection',
-                        desc: 'You must be connected to the internet in order to login. Please connect and try again.'
+                        title: Lang.queryJS('login.error.noInternet.title'),
+                        desc: Lang.queryJS('login.error.noInternet.desc')
                     }
                 } else if(err.code === 'ENOTFOUND'){
                     // Could not reach server.
                     return {
-                        title: 'Error During Login:<br>Authentication Server Offline',
-                        desc: 'Mojang\'s authentication server is currently offline or unreachable. Please wait a bit and try again. You can check the status of the server on <a href="https://help.mojang.com/">Mojang\'s help portal</a>.'
+                        title: Lang.queryJS('login.error.authDown.title'),
+                        desc: Lang.queryJS('login.error.authDown.desc')
                     }
                 }
             }
@@ -169,13 +169,13 @@ function resolveError(err){
     if(err.message != null){
         if(err.message === 'NotPaidAccount'){
             return {
-                title: 'Error During Login:<br>Game Not Purchased',
-                desc: 'The account you are trying to login with has not purchased a copy of Minecraft.<br>You may purchase a copy on <a href="https://minecraft.net/">Minecraft.net</a>'
+                title: Lang.queryJS('login.error.notPaid.title'),
+                desc: Lang.queryJS('login.error.notPaid.desc')
             }
         } else {
             // Unknown error with request.
             return {
-                title: 'Error During Login:<br>Unknown Error',
+                title: Lang.queryJS('login.error.unknown.title'),
                 desc: err.message
             }
         }
@@ -247,7 +247,7 @@ loginButton.addEventListener('click', () => {
     }).catch((err) => {
         loginLoading(false)
         const errF = resolveError(err)
-        setOverlayContent(errF.title, errF.desc, 'Try Again')
+        setOverlayContent(errF.title, errF.desc, Lang.queryJS('login.tryAgain'))
         setOverlayHandler(() => {
             formDisabled(false)
             toggleOverlay(false)
