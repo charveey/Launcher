@@ -97,6 +97,10 @@ body {
     padding: 0 !important;
 }
 
+h3 {
+    margin: 0 !important;
+}
+
 /*******************************************************************************
  *                                                                             *
  * Custom input field colors                                                   *

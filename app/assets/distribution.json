@@ -13,7 +13,7 @@
             "description": "A legfrissebb verzió, amellyel csatlakothatsz a szerverre.",
             "icon": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/images/NewHopeIcon.ico",
             "version": "1.0.0",
-            "address": "server21.clans.hu:25788",
+            "address": "server21.clans.hu:25907",
             "minecraftVersion": "1.14.4",
             "discord": {
                 "shortId": "NewHope",

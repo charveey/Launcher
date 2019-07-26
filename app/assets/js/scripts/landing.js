@@ -222,31 +222,33 @@ const refreshServerStatus = async function(fade = false){
     loggerLanding.log('Refreshing Server Status')
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
-    let pLabel = 'SZERVER'
-    let pVal = 'OFFLINE'
+    let pVal = `
+    <div class="col s12 center-align">
+        <h3 class="light">A szerver jelenleg nem elérhető</h3>
+    </div>
+    `
 
     try {
         const serverURL = new URL('my://' + serv.getAddress())
         const servStat = await ServerStatus.getStatus(serverURL.hostname, serverURL.port)
         if(servStat.online){
-            pLabel = 'JÁTÉKOS'
-            pVal = servStat.onlinePlayers + '/' + servStat.maxPlayers
+            pVal = `
+            <div class="col s6 center-align">
+                <h3 class="light">${servStat.onlinePlayers}</h3>
+                <h5 class="light">játékos</h5>
+            </div>
+            <div class="col s6 center-align">
+                <h3 class="light">${servStat.maxPlayers}</h3>
+                <h5 class="light">férőhely</h5>
+            </div>
+            `
         }
 
     } catch (err) {
         loggerLanding.warn('Unable to refresh server status, assuming offline.')
         loggerLanding.debug(err)
     }
-    if(fade){
-        $('#server_status_wrapper').fadeOut(250, () => {
-            document.getElementById('landingPlayerLabel').innerHTML = pLabel
-            document.getElementById('player_count').innerHTML = pVal
-            $('#server_status_wrapper').fadeIn(500)
-        })
-    } else {
-        document.getElementById('landingPlayerLabel').innerHTML = pLabel
-        document.getElementById('player_count').innerHTML = pVal
-    }
+    document.getElementById('serverStatus').innerHTML = pVal
     
 }
 
