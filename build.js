@@ -10,8 +10,7 @@ function getCurrentPlatform(){
         case 'linux':
             return Platform.linux
         default:
-            console.error('Cannot resolve current platform!')
-            return undefined
+            return Platform.linux
     }
 }
 
