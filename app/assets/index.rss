@@ -15,7 +15,7 @@
       <guid>https://newhope.hu/</guid>
       <author>invalid@example.com (pepyta)</author>
       <dc:creator>pepyta</dc:creator>
-      <content:encoded><![CDATA[Mostantól a kliensen belül is olvashatjátok híreinket!]]></content:encoded>
+      <content>A legfrissebb híreket már az indítón belülről is olvashatod, hogy ne maradj le semmiről!</content>
     </item>
   </channel>
 </rss>

@@ -102,6 +102,8 @@ function createWindow() {
             nodeIntegration: true,
             contextIsolation: false
         },
+        minHeight: 400,
+        minWidth: 601,
         backgroundColor: '#171614'
     })
 

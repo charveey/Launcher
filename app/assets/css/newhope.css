@@ -35,10 +35,12 @@ p {
     border-radius: 7px 7px 0 0 !important;
 }
 
-/*body {
-    background: url('./../images/backgrounds/0.jpg') no-repeat center center fixed;
-    background-size: cover;
-}*/
+body {
+    background-repeat:  no-repeat !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
 
 .newhope-color {
     background-color: #5669bc !important;
@@ -85,6 +87,14 @@ p {
 .launcher_footer .card,
 .launcher_footer .btn {
     margin-top: -25px;
+}
+
+.card-image .card-title {
+    text-shadow: 0 0 8px #000;
+}
+
+#javaMemorySettings .row .col {
+    padding: 0 !important;
 }
 
 /*******************************************************************************

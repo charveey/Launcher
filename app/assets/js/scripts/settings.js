@@ -425,16 +425,16 @@ function populateAuthAccounts(){
         const acc = authAccounts[val]
         authAccountStr += `
         <div class="settingsAuthAccount" uuid="${acc.uuid}">
-            <div class="col s12 m6 l4">
+            <div class="col s12 m4">
                 <div class="card hoverable">
                     <div class="card-image">
                         <img alt="${acc.displayName}" src="https://minotar.net/avatar/${acc.username}?scale=3&default=MHF_Steve&overlay">
                         <span class="card-title">${acc.displayName}</span>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="settingsAuthAccountSelect newhope-color-text" ${selectedUUID === acc.uuid ? 'selected>Kiválaszott felhasználó &#10004;' : '>Felhasználó kiválasztása'}</a>
+                        <a href="#" class="settingsAuthAccountSelect newhope-color-text truncate" ${selectedUUID === acc.uuid ? 'selected>Kiválaszott felhasználó &#10004;' : '>Felhasználó kiválasztása'}</a>
                         <div class="settingsAuthAccountWrapper">
-                            <a href="#" class="settingsAuthAccountLogOut newhope-color-text">Kijelentkezés</a>
+                            <a href="#" class="settingsAuthAccountLogOut newhope-color-text truncate">Kijelentkezés</a>
                         </div>
                     </div>
                 </div>

@@ -780,7 +780,7 @@ function slide_(up){
     const lCLRight = document.querySelector('#landingContainer > #lower > #right')
     const newsBtn = document.querySelector('#landingContainer > #lower > #center #content')
     const landingContainer = document.getElementById('landingContainer')
-    const newsContainer = document.querySelector('#landingContainer > #newsContainer')
+    const newsContainer = document.querySelector('#newsContainer')
 
     newsGlideCount++
 
@@ -1005,8 +1005,8 @@ function initNews(){
                     displayArticle(newsArr[nxtArt], nxtArt+1)
                 }
 
-                document.getElementById('newsNavigateRight').onclick = () => { switchHandler(true) }
-                document.getElementById('newsNavigateLeft').onclick = () => { switchHandler(false) }
+                //document.getElementById('newsNavigateRight').onclick = () => { switchHandler(true) }
+                //document.getElementById('newsNavigateLeft').onclick = () => { switchHandler(false) }
 
                 $('#newsErrorContainer').fadeOut(250, () => {
                     displayArticle(newsArr[0], 1)
@@ -1053,11 +1053,12 @@ document.addEventListener('keydown', (e) => {
  */
 function displayArticle(articleObject, index){
     newsArticleTitle.innerHTML = articleObject.title
-    newsArticleTitle.href = articleObject.link
-    newsArticleAuthor.innerHTML = 'by ' + articleObject.author
-    newsArticleDate.innerHTML = articleObject.date
-    newsArticleComments.innerHTML = articleObject.comments
-    newsArticleComments.href = articleObject.commentsLink
+    //newsArticleTitle.href = articleObject.link
+    //newsArticleAuthor.innerHTML = 'by ' + articleObject.author
+    //newsArticleDate.innerHTML = articleObject.date
+    //newsArticleComments.innerHTML = articleObject.comments
+    //newsArticleComments.href = articleObject.commentsLink
+    console.log(articleObject.content)
     newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
     Array.from(newsArticleContentScrollable.getElementsByClassName('bbCodeSpoilerButton')).forEach(v => {
         v.onclick = () => {
@@ -1065,7 +1066,7 @@ function displayArticle(articleObject, index){
             text.style.display = text.style.display === 'block' ? 'none' : 'block'
         }
     })
-    newsNavigationStatus.innerHTML = index + ' of ' + newsArr.length
+    //newsNavigationStatus.innerHTML = index + ' of ' + newsArr.length
     newsContent.setAttribute('article', index-1)
 }
 

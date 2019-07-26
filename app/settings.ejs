@@ -6,12 +6,12 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col hide-on-small-only m3">
-                <div class="toc-wrapper pinned">
+            <div class="col s12 m3">
+                <div class="toc-wrapper">
                     <div style="margin: 10px 16px;" class="white-text flow-text">
                         Beállítások
                     </div>
-                    <div style="height: 1px;" class=>
+                    <div>
                         <ul class="section table-of-contents">
                             <li>
                                 <a href="#settingsTabAccount" rSc="settingsTabAccount"
@@ -28,6 +28,7 @@
                                 <a href="#settingsTabLauncher" rSc="settingsTabLauncher" class="settingsNavItem">Indító
                                     beállítások</a>
                             </li>
+                            <li style="height: 40px"></li>
                             <li>
                                 <a href="#settingsTabAbout" rSc="settingsTabAbout" class="settingsNavItem">Rólunk</a>
                             </li>
@@ -74,7 +75,7 @@
                                     </div>
 
                                     <div class="row valign-wrapper">
-                                        <div class="col s4 truncate">
+                                        <div class="s4 truncate">
                                             <span class="settingsFieldTitle">Játék felbontása</span>
                                         </div>
                                         <div class="col s3">
@@ -90,8 +91,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="row valign-wrapper">
-                                        <div class="col s9">
+                                    <div class="row valign-wrapper section">
+                                        <div class="s9">
                                             <span class="settingsFieldTitle">Teljes képernyős indítás</span>
                                         </div>
                                         <div class="col s3 right">
@@ -104,8 +105,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="row valign-wrapper">
-                                        <div class="col s9">
+                                    <div class="row valign-wrapper section">
+                                        <div class="s9">
                                             <span class="settingsFieldTitle">Automatikus csatlakozás a szerverhez</span>
                                         </div>
                                         <div class="col s3 right">
@@ -117,8 +118,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row valign-wrapper">
-                                        <div class="col s9">
+                                    <div class="row valign-wrapper section">
+                                        <div class="s9">
                                             <span class="settingsFieldTitle">Indító és játék külön indítása</span>
                                         </div>
                                         <div class="col s3 right">
@@ -205,12 +206,12 @@
                         </div>
 
                         <div class="col s12">
-                            <div class="card hoverable">
+                            <div class="card hoverable" id="javaMemorySettings">
                                 <div class="card-content">
                                     <div class="card-title">
                                         Memória
                                     </div>
-                                    <div class="row settingsMemoryContentItem">
+                                    <div class="row settingsMemoryContentItem section valign-wrapper">
                                         <div class="col s4 truncate">
                                             <span class="settingsMemoryHeader">Maximum RAM</span>
                                         </div>
@@ -223,13 +224,13 @@
                                                         <div class="rangeSliderTrack"></div>
                                                     </div>
                                                 </div>
-                                                <div class="col s3">
+                                                <div class="col s3 center-align">
                                                     <span id="settingsMaxRAMLabel" class="settingsMemoryLabel">3G</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row settingsMemoryContentItem">
+                                    <div class="row settingsMemoryContentItem section valign-wrapper">
                                         <div class="col s4 truncate">
                                             <span class="settingsMemoryHeader">Minimum RAM</span>
                                         </div>
@@ -242,25 +243,25 @@
                                                         <div class="rangeSliderTrack"></div>
                                                     </div>
                                                 </div>
-                                                <div class="col s3">
+                                                <div class="col s3 center-align">
                                                     <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row section">
                                         <div class="s12">
                                             Az ajánlott minimális RAM 3 GB. Ha a minimumot és a maximumot ugyanarra a
                                             szintre állítod csökkentheted az akadozást.
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row section">
                                         <div class="col s6">
-                                            <span class="settingsMemoryStatusTitle">Összesen</span>
+                                            <span class="settingsMemoryStatusTitle">Összesen:</span>
                                             <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">16G</span>
                                         </div>
                                         <div class="col s6">
-                                            <span class="settingsMemoryStatusTitle">Elérhető</span>
+                                            <span class="settingsMemoryStatusTitle">Elérhető:</span>
                                             <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">7.3G</span>
                                         </div>
 
@@ -274,11 +275,8 @@
                                 <div class="card-content">
 
                                     <div class="card-title">
-                                        <div id="settingsJavaExecTitle">Java futtató</div>
-                                        <strong>Szükséges:
-                                            Java 8 x64.</strong><br>Az elérési útvonalnak <strong>bin
-                                            <%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>-val
-                                        kell végződnie.
+                                        <div id="settingsJavaExecTitle">Java futtató (szükséges: Java 8 x64)</div>
+                                        Az elérési útvonalnak <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>-val kell végződnie.
                                     </div>
                                     <div id="settingsJavaExecDetails">Kiválasztva: Java 8 Update 172 (x64)</div>
                                     <div class="settingsFileSelActions file-field input-field">
@@ -326,7 +324,7 @@
                             <div class="card hoverable">
                                 <div class="card-content">
                                     <div class="row valign-wrapper">
-                                        <div class="col s9 truncate settingsTabHeaderText card-title">
+                                        <div class="s9 truncate settingsTabHeaderText card-title">
                                             Kiadás előtti (béta) verziók letöltése<br>
                                             Ezen verziók tartalmazhatnak olyan funkciókat, amik még nem voltak kellően
                                             tesztelve.
@@ -397,7 +395,6 @@
                             <div class="card hoverable">
                                 <div class="card-content">
                                     <div class="card-title">
-                                        <img id="settingsAboutLogo" src="./assets/images/NewHopeIcon.png">
                                         <span id="settingsAboutTitle">NewHope indító</span>
                                     </div>
                                     <div class="row valign-wrapper">
