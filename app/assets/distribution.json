@@ -9,7 +9,7 @@
     "servers": [
         {
             "id": "NewHope_1.14.4",
-            "name": "NewHope (legfrissebb)",
+            "name": "Verzió 1.14.4 (legfrissebb)",
             "description": "A legfrissebb verzió, amellyel csatlakothatsz a szerverre.",
             "icon": "https://raw.githubusercontent.com/pepyta/NewHopeLauncher/master/app/assets/images/NewHopeIcon.ico",
             "version": "1.0.0",

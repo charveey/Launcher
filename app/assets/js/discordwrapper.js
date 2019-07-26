@@ -10,13 +10,9 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting 
     client = new Client({ transport: 'ipc' })
 
     activity = {
-        details: initialDetails,
-        state: 'Server: ' + servSettings.shortId,
+        state: "Éppen a NewHope-pal játszik!", //'Server: ' + servSettings.shortId,
         largeImageKey: servSettings.largeImageKey,
-        largeImageText: servSettings.largeImageText,
-        smallImageKey: genSettings.smallImageKey,
-        smallImageText: genSettings.smallImageText,
-        startTimestamp: new Date().getTime(),
+        largeImageText: "NewHope",
         instance: false
     }
 
