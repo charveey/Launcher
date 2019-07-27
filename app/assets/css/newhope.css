@@ -46,8 +46,13 @@ body {
     background-color: #5669bc !important;
 }
 
+.card-action a,
 .newhope-color-text {
     color: #5669bc !important;
+}
+
+.card-action a:hover {
+    cursor: pointer;
 }
 
 .card-title {
@@ -490,16 +495,11 @@ h3 {
 
 /* Overlay title styles. */
 #overlayTitle {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
     -webkit-user-select: initial;
 }
 
 /* Overlay description styles. */
 #overlayDesc {
-    font-size: 12px;
-    font-weight: bold;
     -webkit-user-select: initial;
 }
 

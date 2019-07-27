@@ -278,7 +278,6 @@
                                         <div id="settingsJavaExecTitle">Java futtató (szükséges: Java 8 x64)</div>
                                         Az elérési útvonalnak <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>-val kell végződnie.
                                     </div>
-                                    <div id="settingsJavaExecDetails">Kiválasztva: Java 8 Update 172 (x64)</div>
                                     <div class="settingsFileSelActions file-field input-field">
                                         <input class="settingsFileSelVal" id="settingsJavaExecVal" type="text"
                                             value="null" cValue="JavaExecutable" disabled>
@@ -286,6 +285,7 @@
                                             <%=process.platform==='win32' ? 'accept=.exe' : '' %>>
 
                                     </div>
+                                    <div id="settingsJavaExecDetails">Kiválasztva: Java 8 Update 172 (x64)</div>
                                 </div>
                             </div>
                         </div>
@@ -399,7 +399,9 @@
                                     </div>
                                     <div class="row valign-wrapper">
                                         <div class="col s3 m2 l1">
-                                            <div id="settingsAboutCurrentVersionCheck">&#10003;</div>
+                                            <div class="center-align">
+                                                <i class="material-icons" id="settingsAboutCurrentVersionCheck">done</i>
+                                            </div>
                                         </div>
                                         <div class="col s9 m10 l11">
                                             <div id="settingsAboutCurrentVersionDetails">
@@ -455,7 +457,9 @@
                                     </div>
                                     <div class="row valign-wrapper">
                                         <div class="col s3 m2 l1">
-                                            <div id="settingsUpdateVersionCheck">&#10003;</div>
+                                            <div class="center-align">
+                                                <i class="material-icons" id="settingsUpdateVersionCheck">done</i>
+                                            </div>
                                         </div>
                                         <div class="col s9 m10 l11">
                                             <div id="settingsUpdateVersionDetails">

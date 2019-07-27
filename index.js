@@ -93,8 +93,8 @@ let win
 function createWindow() {
 
     win = new BrowserWindow({
-        width: 980,
-        height: 552,
+        width: 1138,
+        height: 640,
         icon: getPlatformIcon('NewHopeIcon'),
         frame: false,
         webPreferences: {
@@ -102,8 +102,8 @@ function createWindow() {
             nodeIntegration: true,
             contextIsolation: false
         },
-        minHeight: 400,
-        minWidth: 601,
+        minHeight: 640,
+        minWidth: 700,
         backgroundColor: '#171614'
     })
 

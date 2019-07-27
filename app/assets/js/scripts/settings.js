@@ -1172,11 +1172,11 @@ function populateVersionInformation(version, valueElement, titleElement, checkEl
     if(isPrerelease(version)){
         titleElement.innerHTML = 'Béta verzió'
         titleElement.style.color = '#ff886d'
-        checkElement.style.background = '#ff886d'
+        checkElement.innerHTML = "build"
     } else {
         titleElement.innerHTML = 'Stabil kiadás'
         titleElement.style.color = null
-        checkElement.style.background = null
+        checkElement.innerHTML = "done"
     }
 }
 

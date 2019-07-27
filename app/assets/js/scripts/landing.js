@@ -244,6 +244,7 @@ const refreshServerStatus = async function(fade = false){
             `
         }
 
+
     } catch (err) {
         loggerLanding.warn('Unable to refresh server status, assuming offline.')
         loggerLanding.debug(err)
@@ -1057,7 +1058,7 @@ document.addEventListener('keydown', (e) => {
 function displayArticle(articleObject, index){
     newsArticleTitle.innerHTML = articleObject.title
     //newsArticleTitle.href = articleObject.link
-    //newsArticleAuthor.innerHTML = 'by ' + articleObject.author
+    newsArticleAuthor.innerHTML = 'Írta: ' + articleObject.author
     //newsArticleDate.innerHTML = articleObject.date
     //newsArticleComments.innerHTML = articleObject.comments
     //newsArticleComments.href = articleObject.commentsLink
@@ -1082,6 +1083,7 @@ function loadNews(){
         const distroData = DistroManager.getDistribution()
         const newsFeed = distroData.getRSS()
         const newsHost = new URL(newsFeed).origin + '/'
+
         $.ajax(
             {
                 url: newsFeed,
