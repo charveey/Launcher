@@ -1,5 +1,5 @@
 // Work in progress
-const logger = require('./loggerutil')('%c[DiscordWrapper]', 'color: #7289da; font-weight: bold')
+const logger = require('./loggerutil')('%c[Discord]', 'color: #7289da; font-weight: bold')
 
 const {Client} = require('discord-rpc')
 
@@ -17,15 +17,15 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting 
     }
 
     client.on('ready', () => {
-        logger.log('Discord RPC Connected')
+        logger.log('A Discord Rich Presence sikeresen elindult!')
         client.setActivity(activity)
     })
     
     client.login({clientId: genSettings.clientId}).catch(error => {
         if(error.message.includes('ENOENT')) {
-            logger.log('Unable to initialize Discord Rich Presence, no client detected.')
+            logger.log('Nem lehet elindítani a Discord RPC-t, mert nem észlelhető Discord kliens a gépen.')
         } else {
-            logger.log('Unable to initialize Discord Rich Presence: ' + error.message, error)
+            logger.log('Nem lehet elindítani a Discord RPC-t: ' + error.message, error)
         }
     })
 }

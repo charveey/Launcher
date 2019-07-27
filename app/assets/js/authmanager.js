@@ -12,8 +12,8 @@
 const ConfigManager = require('./configmanager')
 const LoggerUtil    = require('./loggerutil')
 const Mojang        = require('./mojang')
-const logger        = LoggerUtil('%c[AuthManager]', 'color: #a02d2a; font-weight: bold')
-const loggerSuccess = LoggerUtil('%c[AuthManager]', 'color: #209b07; font-weight: bold')
+const logger        = LoggerUtil('%c[Bejelentkezés]', 'color: #a02d2a; font-weight: bold')
+const loggerSuccess = LoggerUtil('%c[Bejelentkezés]', 'color: #209b07; font-weight: bold')
 
 // Functions
 
@@ -75,17 +75,17 @@ exports.validateSelected = async function(){
             ConfigManager.updateAuthAccount(current.uuid, session.accessToken)
             ConfigManager.save()
         } catch(err) {
-            logger.debug('Error while validating selected profile:', err)
+            logger.debug('Hiba történt a következő profil ellenőrzése során:', err)
             if(err && err.error === 'ForbiddenOperationException'){
                 // What do we do?
             }
-            logger.log('Account access token is invalid.')
+            logger.log('A hozzáférési token nem megfelelő.')
             return false
         }
-        loggerSuccess.log('Account access token validated.')
+        loggerSuccess.log('A hozzáférési token sikeresen frissült!')
         return true
     } else {
-        loggerSuccess.log('Account access token validated.')
+        loggerSuccess.log('A hozzáférési token már megfelelő')
         return true
     }
 }

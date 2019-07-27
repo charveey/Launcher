@@ -9,7 +9,7 @@ let tracker = new target(...(process.argv.splice(3)))
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 //const tracker = new AssetGuard(process.argv[2], process.argv[3])
-console.log('AssetExec Started')
+console.log('Az AssetExec elindult')
 
 // Temporary for debug purposes.
 process.on('unhandledRejection', r => console.log(r))
@@ -63,6 +63,6 @@ process.on('message', (msg) => {
 })
 
 process.on('disconnect', () => {
-    console.log('AssetExec Disconnected')
+    console.log('Az AssetExec leállt')
     process.exit(0)
 })

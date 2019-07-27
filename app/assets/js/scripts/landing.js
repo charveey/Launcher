@@ -21,7 +21,7 @@ const launch_details_text     = document.getElementById('launch_details_text')
 const server_selection_button = document.getElementById('server_selection_button')
 const user_text               = document.getElementById('user_text')
 
-const loggerLanding = LoggerUtil('%c[Landing]', 'color: #000668; font-weight: bold')
+const loggerLanding = LoggerUtil('%c[Főooldal]', 'color: #000668; font-weight: bold')
 
 /* Launch Progress Wrapper Functions */
 
@@ -84,7 +84,7 @@ function setLaunchEnabled(val){
 
 // Bind launch button
 document.getElementById('launch_button').addEventListener('click', function(e){
-    loggerLanding.log('Launching game..')
+    loggerLanding.log('Játék indítása..')
     const mcVersion = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer()).getMinecraftVersion()
     const jExe = ConfigManager.getJavaExecutable()
     if(jExe == null){
@@ -97,7 +97,7 @@ document.getElementById('launch_button').addEventListener('click', function(e){
 
         const jg = new JavaGuard(mcVersion)
         jg._validateJavaBinary(jExe).then((v) => {
-            loggerLanding.log('Java version meta', v)
+            loggerLanding.log('Java verzió meta adatai:', v)
             if(v.valid){
                 dlAsync()
             } else {
@@ -219,7 +219,7 @@ const refreshMojangStatuses = async function(){
 */
 
 const refreshServerStatus = async function(fade = false){
-    loggerLanding.log('Refreshing Server Status')
+    loggerLanding.log('Szerver státuszának lekérdezése...')
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
     let pVal = `
@@ -246,7 +246,7 @@ const refreshServerStatus = async function(fade = false){
 
 
     } catch (err) {
-        loggerLanding.warn('Unable to refresh server status, assuming offline.')
+        loggerLanding.warn('Nem sikerült lekérdezni a szerver státuszát. Úgy vesszük offline.')
         loggerLanding.debug(err)
     }
     document.getElementById('serverStatus').innerHTML = pVal
@@ -488,7 +488,7 @@ function dlAsync(login = true){
 
     if(login) {
         if(ConfigManager.getSelectedAccount() == null){
-            loggerLanding.error('You must be logged into an account.')
+            loggerLanding.error('Be kell jelentkezned egy felhasználóba!')
             return
         }
     }
@@ -523,13 +523,13 @@ function dlAsync(login = true){
         loggerAEx.log(data)
     })
     aEx.on('error', (err) => {
-        loggerLaunchSuite.error('Error during launch', err)
-        showLaunchFailure('Error During Launch', err.message || 'See console (CTRL + Shift + i) for more details.')
+        loggerLaunchSuite.error('Hiba indítás során', err)
+        showLaunchFailure('Hiba az indítás során:', err.message || 'Nézd meg a konzolt (CTRL + Shift + I) a részletekért!')
     })
     aEx.on('close', (code, signal) => {
         if(code !== 0){
-            loggerLaunchSuite.error(`AssetExec exited with code ${code}, assuming error.`)
-            showLaunchFailure('Error During Launch', 'See console (CTRL + Shift + i) for more details.')
+            loggerLaunchSuite.error(`AssetExec kilépési kódja: ${code}, úgy tűnik valami hiba történt.`)
+            showLaunchFailure('Hiba az indítás során:', 'Nézd meg a konzolt (CTRL + Shift + I) a részletekért!')
         }
     })
 
@@ -540,27 +540,27 @@ function dlAsync(login = true){
             switch(m.data){
                 case 'distribution':
                     setLaunchPercentage(20, 100)
-                    loggerLaunchSuite.log('Validated distibution index.')
+                    loggerLaunchSuite.log('A terjesztési lista sikeresen ellenőrizve!')
                     setLaunchDetails('Verzió információk betöltése...')
                     break
                 case 'version':
                     setLaunchPercentage(40, 100)
-                    loggerLaunchSuite.log('Version data loaded.')
-                    setLaunchDetails('Erőforrások ellenőrzése..')
+                    loggerLaunchSuite.log('Verzió információk betöltve!')
+                    setLaunchDetails('Erőforrások ellenőrzése...')
                     break
                 case 'assets':
                     setLaunchPercentage(60, 100)
-                    loggerLaunchSuite.log('Asset Validation Complete')
+                    loggerLaunchSuite.log('Erőforrások ellenőrzése sikeresen megtörtént!')
                     setLaunchDetails('Könyvtárak ellenőrzése...')
                     break
                 case 'libraries':
                     setLaunchPercentage(80, 100)
-                    loggerLaunchSuite.log('Library validation complete.')
+                    loggerLaunchSuite.log('A könyvtárak ellenőrzése sikeresen megtörtént!')
                     setLaunchDetails('Egyéb fájlok ellenőrzése...')
                     break
                 case 'files':
                     setLaunchPercentage(100, 100)
-                    loggerLaunchSuite.log('File validation complete.')
+                    loggerLaunchSuite.log('A fájlok ellenőrzése sikeresen megtörtént!')
                     setLaunchDetails('Fájlok letöltése...')
                     break
             }
@@ -609,7 +609,7 @@ function dlAsync(login = true){
         } else if(m.context === 'error'){
             switch(m.data){
                 case 'download':
-                    loggerLaunchSuite.error('Error while downloading:', m.error)
+                    loggerLaunchSuite.error('Hiba letöltés közben:', m.error)
                     
                     if(m.error.code === 'ENOENT'){
                         showLaunchFailure(
@@ -635,10 +635,10 @@ function dlAsync(login = true){
 
             // If these properties are not defined it's likely an error.
             if(m.result.versionData == null){ //m.result.forgeData == null ||
-                loggerLaunchSuite.error('Error during validation:', m.result)
+                loggerLaunchSuite.error('Hiba az ellenőrzés közben:', m.result)
 
-                loggerLaunchSuite.error('Error during launch', m.result.error)
-                showLaunchFailure('Error During Launch', 'Please check the console (CTRL + Shift + i) for more details.')
+                loggerLaunchSuite.error('Indítási hiba lépett fel', m.result.error)
+                showLaunchFailure('Nem sikerült elindítani a játékot.', 'Nézd meg a konzolt (CTRL + Shift + i) a részletekért!')
 
                 allGood = false
             }
@@ -648,7 +648,7 @@ function dlAsync(login = true){
 
             if(login && allGood) {
                 const authUser = ConfigManager.getSelectedAccount()
-                loggerLaunchSuite.log(`Sending selected account (${authUser.displayName}) to ProcessBuilder.`)
+                loggerLaunchSuite.log(`A kiválasztott felhasználó (${authUser.displayName}) küldése a ProcessBuilder-nek.`)
                 let pb = new ProcessBuilder(serv, versionData, authUser, remote.app.getVersion())
                 setLaunchDetails('Játék indítása...')
 
@@ -681,8 +681,8 @@ function dlAsync(login = true){
                 const gameErrorListener = function(data){
                     data = data.trim()
                     if(data.indexOf('Could not find or load main class net.minecraft.launchwrapper.Launch') > -1){
-                        loggerLaunchSuite.error('Game launch failed, LaunchWrapper was not downloaded properly.')
-                        showLaunchFailure('Error During Launch', 'The main file, LaunchWrapper, failed to download properly. As a result, the game cannot launch.<br><br>To fix this issue, temporarily turn off your antivirus software and launch the game again.<br><br>If you have time, please <a href="https://github.com/dscalzi/ElectronLauncher/issues">submit an issue</a> and let us know what antivirus software you use. We\'ll contact them and try to straighten things out.')
+                        loggerLaunchSuite.error('A játék indítása sikertelen volt. A LaunchWrapper-t nem sikerült rendesen letölteni.')
+                        showLaunchFailure('Indítási hiba lépett fel', 'A fő fájlt, a LaunchWrapper-t nem sikerült megfelelően letölteni, aminek a következtében nem sikerült a játékot elindítani.<br><br>Hogy megoldjuk a problémát ideiglenesen kapcsold ki a vírusirtódat és próbáld meg újra!')
                     }
                 }
 
@@ -702,7 +702,7 @@ function dlAsync(login = true){
                         DiscordWrapper.initRPC(distro.discord, serv.discord)
                         hasRPC = true
                         proc.on('close', (code, signal) => {
-                            loggerLaunchSuite.log('Shutting down Discord Rich Presence..')
+                            loggerLaunchSuite.log('Discord RPC leállítása...')
                             DiscordWrapper.shutdownRPC()
                             hasRPC = false
                             proc = null
@@ -711,8 +711,8 @@ function dlAsync(login = true){
 
                 } catch(err) {
 
-                    loggerLaunchSuite.error('Error during launch', err)
-                    showLaunchFailure('Error During Launch', 'Please check the console (CTRL + Shift + i) for more details.')
+                    loggerLaunchSuite.error('Hiba lépett fel az indítás közben:', err)
+                    showLaunchFailure('Hiba lépett fel az indítás közben', 'Kérlek ellenőrizd a konzolt (CTRL + Shift + I) a részletekért!')
 
                 }
             }
@@ -733,15 +733,15 @@ function dlAsync(login = true){
         serv = data.getServer(ConfigManager.getSelectedServer())
         aEx.send({task: 'execute', function: 'validateEverything', argsArr: [ConfigManager.getSelectedServer(), DistroManager.isDevMode()]})
     }, (err) => {
-        loggerLaunchSuite.log('Error while fetching a fresh copy of the distribution index.', err)
+        loggerLaunchSuite.log('Hiba lépett fel a terjesztési index lekérdezése során.', err)
         refreshDistributionIndex(false, (data) => {
             onDistroRefresh(data)
             serv = data.getServer(ConfigManager.getSelectedServer())
             aEx.send({task: 'execute', function: 'validateEverything', argsArr: [ConfigManager.getSelectedServer(), DistroManager.isDevMode()]})
         }, (err) => {
-            loggerLaunchSuite.error('Unable to refresh distribution index.', err)
+            loggerLaunchSuite.error('Nem sikerült frissítani a terjesztési indexet:', err)
             if(DistroManager.getDistribution() == null){
-                showLaunchFailure('Fatal Error', 'Could not load a copy of the distribution index. See the console (CTRL + Shift + i) for more details.')
+                showLaunchFailure('Végzetes hiba', 'Nem sikerült frissítani a terjesztési indexet. Nézd meg a konzolt (CTRL + Shift + i) a részletekért!')
 
                 // Disconnect from AssetExec
                 aEx.disconnect()
@@ -1062,7 +1062,7 @@ function displayArticle(articleObject, index){
     //newsArticleDate.innerHTML = articleObject.date
     //newsArticleComments.innerHTML = articleObject.comments
     //newsArticleComments.href = articleObject.commentsLink
-    console.log(articleObject.content)
+    //console.log(articleObject.content)
     newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
     Array.from(newsArticleContentScrollable.getElementsByClassName('bbCodeSpoilerButton')).forEach(v => {
         v.onclick = () => {
@@ -1104,7 +1104,7 @@ function loadNews(){
 
                         // Fix relative links in content.
                         let content = el.find('content\\:encoded').text()
-                        console.log(content)
+                        //console.log(content)
                         let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
                         let matches
                         while((matches = regex.exec(content))){

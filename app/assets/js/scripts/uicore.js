@@ -11,8 +11,8 @@ const isDev                                  = require('./assets/js/isdev')
 const LoggerUtil                             = require('./assets/js/loggerutil')
 
 const loggerUICore             = LoggerUtil('%c[UICore]', 'color: #000668; font-weight: bold')
-const loggerAutoUpdater        = LoggerUtil('%c[AutoUpdater]', 'color: #000668; font-weight: bold')
-const loggerAutoUpdaterSuccess = LoggerUtil('%c[AutoUpdater]', 'color: #209b07; font-weight: bold')
+const loggerAutoUpdater        = LoggerUtil('%c[Automatikus frissítés]', 'color: #000668; font-weight: bold')
+const loggerAutoUpdaterSuccess = LoggerUtil('%c[Automatikus frissítés]', 'color: #209b07; font-weight: bold')
 
 // Log deprecation and process warnings.
 process.traceProcessWarnings = true
@@ -26,9 +26,9 @@ window.eval = global.eval = function () {
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
-    console.log('%cThe console is dark and full of terrors.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
-    console.log('%cIf you\'ve been told to paste something here, you\'re being scammed.', 'font-size: 16px')
-    console.log('%cUnless you know exactly what you\'re doing, close this window.', 'font-size: 16px')
+    console.log('%cFigyelj oda!', 'color: #5669bc; -webkit-text-stroke: 4px black; font-size: 60px; font-weight: bold')
+    console.log('%cHa valaki azt mondta neked, hogy másolj be ide valamit, akkor valószínűleg csak át akar verni.', 'font-size: 16px')
+    console.log('%cHa nem vagy teljesen tisztában azzal, hogy mit csinálsz zárd be ezt az ablakot!', 'font-size: 16px')
 })
 
 // Disable zoom, needed for darwin.
@@ -42,7 +42,7 @@ if(!isDev){
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg){
             case 'checking-for-update':
-                loggerAutoUpdater.log('Checking for update..')
+                loggerAutoUpdater.log('Frissítések keresése...')
                 settingsUpdateButtonStatus('Frissítések keresése...', true)
                 break
             case 'update-available':
@@ -56,7 +56,7 @@ if(!isDev){
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
+                loggerAutoUpdaterSuccess.log('A ' + info.version + ' verzió készen áll a telepítésre!')
                 settingsUpdateButtonStatus('Frissítés telepítése', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
@@ -65,7 +65,7 @@ if(!isDev){
                 showUpdateUI(info)
                 break
             case 'update-not-available':
-                loggerAutoUpdater.log('No new update found.')
+                loggerAutoUpdater.log('Nem található új frissítés.')
                 settingsUpdateButtonStatus('Frissítések keresése')
                 break
             case 'ready':
@@ -77,17 +77,17 @@ if(!isDev){
             case 'realerror':
                 if(info != null && info.code != null){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
-                        loggerAutoUpdater.log('No suitable releases found.')
+                        loggerAutoUpdater.log('Nem található megfelelő frissítés.')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No releases found.')
+                        loggerAutoUpdater.log('Nem található frissítés.')
                     } else {
-                        loggerAutoUpdater.error('Error during update check..', info)
-                        loggerAutoUpdater.debug('Error Code:', info.code)
+                        loggerAutoUpdater.error('Hiba a frissítések lekérdezése során...', info)
+                        loggerAutoUpdater.debug('Hibakód:', info.code)
                     }
                 }
                 break
             default:
-                loggerAutoUpdater.log('Unknown argument', arg)
+                loggerAutoUpdater.log('Nem ismerjük ezt a paramétert:', arg)
                 break
         }
     })
@@ -120,7 +120,7 @@ $(function(){
 
 document.addEventListener('readystatechange', function () {
     if (document.readyState === 'interactive'){
-        loggerUICore.log('UICore Initializing..')
+        loggerUICore.log('UICore betöltése...')
 
         // Bind close button.
         Array.from(document.getElementsByClassName('fCb')).map((val) => {

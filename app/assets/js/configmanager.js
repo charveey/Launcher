@@ -2,7 +2,7 @@ const fs   = require('fs-extra')
 const os   = require('os')
 const path = require('path')
 
-const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; font-weight: bold')
+const logger = require('./loggerutil')('%c[Beállítás kezelő]', 'color: #a02d2a; font-weight: bold')
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 const dataPath = path.join(sysRoot, '.newhope')
@@ -143,8 +143,8 @@ exports.load = function(){
             doValidate = true
         } catch (err){
             logger.error(err)
-            logger.log('Configuration file contains malformed JSON or is corrupt.')
-            logger.log('Generating a new configuration file.')
+            logger.log('A konfigurációs fájl nem megfelelő JSON fájl vagy hibás.')
+            logger.log('Új konfigurációs fájl generálása...')
             fs.ensureDirSync(path.join(configPath, '..'))
             config = DEFAULT_CONFIG
             exports.save()
@@ -154,7 +154,7 @@ exports.load = function(){
             exports.save()
         }
     }
-    logger.log('Successfully Loaded')
+    logger.log('Sikeres betöltés!')
 }
 
 /**

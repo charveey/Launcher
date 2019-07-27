@@ -47,7 +47,7 @@ function initAutoUpdater(event, data) {
 ipcMain.on('autoUpdateAction', (event, arg, data) => {
     switch(arg){
         case 'initAutoUpdater':
-            console.log('Initializing auto updater.')
+            console.log('Hiba az automatikus frissítő indítása során.')
             initAutoUpdater(event, data)
             event.sender.send('autoUpdateNotification', 'ready')
             break
@@ -73,7 +73,7 @@ ipcMain.on('autoUpdateAction', (event, arg, data) => {
             autoUpdater.quitAndInstall()
             break
         default:
-            console.log('Unknown argument', arg)
+            console.log('Nem ismert paraméter:', arg)
             break
     }
 })

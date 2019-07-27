@@ -39,7 +39,7 @@ class ProcessBuilder {
         const tempNativePath = path.join(os.tmpdir(), ConfigManager.getTempNativeFolder(), crypto.pseudoRandomBytes(16).toString('hex'))
         process.throwDeprecation = true
         this.setupLiteLoader()
-        logger.log('Using liteloader:', this.usingLiteLoader)
+        logger.log('LiteLoader használata:', this.usingLiteLoader)
         const modObj = this.resolveModConfiguration(ConfigManager.getModConfiguration(this.server.getID()).mods, this.server.getModules())
         
         // Mod list below 1.13
@@ -57,7 +57,7 @@ class ProcessBuilder {
             args = args.concat(this.constructModArguments(modObj.fMods))
         }
 
-        logger.log('Launch Arguments:', args)
+        logger.log('Indítási paraméterek:', args)
 
         const child = child_process.spawn(ConfigManager.getJavaExecutable(), args, {
             cwd: this.gameDir,
@@ -81,12 +81,12 @@ class ProcessBuilder {
             loggerMCstderr.log(data)
         })
         child.on('close', (code, signal) => {
-            logger.log('Exited with code', code)
+            logger.log('Kilépési kód:', code)
             fs.remove(tempNativePath, (err) => {
                 if(err){
-                    logger.warn('Error while deleting temp dir', err)
+                    logger.warn('Hiba történt az ideigelenes (temp) könyvtár törlése során:', err)
                 } else {
-                    logger.log('Temp dir deleted successfully.')
+                    logger.log('Az ideiglenes (temp) könyvtár sikeresen törölve!')
                 }
             })
         })
@@ -636,7 +636,7 @@ class ProcessBuilder {
                         if(!shouldExclude){
                             fs.writeFile(path.join(tempNativePath, fileName), zipEntries[i].getData(), (err) => {
                                 if(err){
-                                    logger.error('Error while extracting native library:', err)
+                                    logger.error('Hiba történt a natív könyvtárak kicsomagolása során:', err)
                                 }
                             })
                         }

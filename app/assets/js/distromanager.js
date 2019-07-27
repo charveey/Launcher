@@ -3,7 +3,7 @@ const path = require('path')
 const request = require('request')
 
 const ConfigManager = require('./configmanager')
-const logger        = require('./loggerutil')('%c[DistroManager]', 'color: #a02d2a; font-weight: bold')
+const logger        = require('./loggerutil')('%c[Verziók]', 'color: #a02d2a; font-weight: bold')
 
 /**
  * Represents the download information
@@ -170,7 +170,7 @@ class Module {
 
         } catch (err) {
             // Improper identifier
-            logger.error('Improper ID for module', this.identifier, err)
+            logger.error('Nem megfelelő azonosító a modulnak', this.identifier, err)
         }
     }
 
@@ -584,10 +584,10 @@ exports.pullLocal = function(){
 
 exports.setDevMode = function(value){
     if(value){
-        logger.log('Developer mode enabled.')
-        logger.log('If you don\'t know what that means, revert immediately.')
+        logger.log('Fejlesztői mód bekapcsolva.')
+        logger.log('Ha nem tudod mit csinál ez, akkor kapcsold ki azonnal!')
     } else {
-        logger.log('Developer mode disabled.')
+        logger.log('Fejlesztői mód kikapcsolva.')
     }
     DEV_MODE = value
 }

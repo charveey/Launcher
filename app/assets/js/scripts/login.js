@@ -253,7 +253,7 @@ loginButton.addEventListener('click', () => {
             toggleOverlay(false)
         })
         toggleOverlay(true)
-        loggerLogin.log('Error while logging in.', err)
+        loggerLogin.log('Hiba lépett fel a bejelentkezés során:', err)
     })
 
 })
