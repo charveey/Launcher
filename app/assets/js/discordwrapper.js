@@ -8,12 +8,12 @@ let activity
 
 exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting for Client..'){
     client = new Client({ transport: 'ipc' })
-
+    
     activity = {
-        state: "Éppen a NewHope-pal játszik!", //'Server: ' + servSettings.shortId,
+        state: 'Verzió: ' + servSettings.shortId,
         largeImageKey: servSettings.largeImageKey,
-        largeImageText: "NewHope",
-        instance: false
+        startTimestamp: new Date().getTime(),
+        instance: true
     }
 
     client.on('ready', () => {

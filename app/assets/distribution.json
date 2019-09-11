@@ -16,8 +16,7 @@
             "address": "s2.vgh.hu:25636",
             "minecraftVersion": "1.14.4",
             "discord": {
-                "shortId": "NewHope",
-                "largeImageText": "A NewHope szerverén játszik",
+                "shortId": "1.14.4",
                 "largeImageKey": "server"
             },
             "mainServer": true,
