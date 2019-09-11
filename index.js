@@ -1,3 +1,5 @@
+if(require('electron-squirrel-startup')) return;
+
 // Requirements
 const {app, BrowserWindow, ipcMain} = require('electron')
 const Menu                          = require('electron').Menu
