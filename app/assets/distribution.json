@@ -29,7 +29,7 @@
                     "artifact": {
                         "size": 2151716,
                         "MD5": "752bdbb0311e58d1f701020f316890cf",
-                        "url": "http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.14.4-28.1.0/forge-1.14.4-28.1.0-universal.jar"
+                        "url": "https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.14.4-28.1.0/forge-1.14.4-28.1.0-universal.jar"
                     },
                     "subModules": [
                         {
