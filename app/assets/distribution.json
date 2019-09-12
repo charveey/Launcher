@@ -8,6 +8,67 @@
     "rss": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/index.rss",
     "servers": [
         {
+            "id": "NewHope_1.14.4_optifine",
+            "name": "Verzió 1.14.4 (Optifine)",
+            "description": "A legfrissebb verzió, amellyel csatlakothatsz a szerverre.",
+            "icon": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/images/NewHopeIcon.ico",
+            "version": "1.0.0",
+            "address": "s2.vgh.hu:25636",
+            "minecraftVersion": "1.14.4",
+            "discord": {
+                "shortId": "1.14.4",
+                "largeImageKey": "server"
+            },
+            "mainServer": true,
+            "autoconnect": true,
+            "modules": [
+                {
+                    "id": "net.minecraftforge:forge:1.14.4-28.1.0",
+                    "name": "Minecraft Forge",
+                    "type": "ForgeHosted",
+                    "artifact": {
+                        "size": 1462142,
+                        "MD5": "867fe6b1209a67fa60f96d7352beeddf",
+                        "url": "http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.14.4-28.1.0/forge-1.14.4-28.1.0-universal.jar"
+                    },
+                    "subModules": [
+                        {
+                            "id": "net.optifine:optifine:1.14.4_HD_U_F3",
+                            "name": "Optifine",
+                            "type": "ForgeMod",
+                            "artifact": {
+                                "size": 25191691,
+                                "MD5": "5dd255be377ac11a4414c4bc6426daa7",
+                                "url": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/Optifine.jar"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "options.txt",
+                    "name": "Default Client Options",
+                    "type": "File",
+                    "artifact": {
+                        "size": 2153,
+                        "path": "options.txt",
+                        "url": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/options.txt"
+                    }
+                },
+                {
+                    "id": "servers.dat",
+                    "name": "Saved Client Servers",
+                    "type": "File",
+                    "artifact": {
+                        "size": 3147,
+                        "MD5": "a771a3ce5d2f2fd44f463adc50f4b77f",
+                        "path": "servers.dat",
+                        "url": "https://raw.githubusercontent.com/newhopemc/Launcher/master/app/assets/servers.dat"
+                    }
+                }
+            ]
+        },
+        
+        {
             "id": "NewHope_1.14.4",
             "name": "Verzió 1.14.4 (legfrissebb)",
             "description": "A legfrissebb verzió, amellyel csatlakothatsz a szerverre.",
@@ -19,7 +80,7 @@
                 "shortId": "1.14.4",
                 "largeImageKey": "server"
             },
-            "mainServer": true,
+            "mainServer": false,
             "autoconnect": true,
             "modules": [
                 {
