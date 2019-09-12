@@ -27,8 +27,8 @@
                     "name": "Minecraft Forge",
                     "type": "ForgeHosted",
                     "artifact": {
-                        "size": 1462142,
-                        "MD5": "867fe6b1209a67fa60f96d7352beeddf",
+                        "size": 2151716,
+                        "MD5": "752bdbb0311e58d1f701020f316890cf",
                         "url": "http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.14.4-28.1.0/forge-1.14.4-28.1.0-universal.jar"
                     },
                     "subModules": [
