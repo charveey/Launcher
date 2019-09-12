@@ -477,7 +477,7 @@ const GAME_LAUNCH_REGEX = /^\[.+\]: MinecraftForge .+ Initialized$/
 let aEx
 let serv
 let versionData
-//let forgeData
+let forgeData
 
 let progressListener
 
@@ -643,13 +643,13 @@ function dlAsync(login = true){
                 allGood = false
             }
 
-            //forgeData = m.result.forgeData
+            forgeData = m.result.forgeData
             versionData = m.result.versionData
 
             if(login && allGood) {
                 const authUser = ConfigManager.getSelectedAccount()
                 loggerLaunchSuite.log(`A kiválasztott felhasználó (${authUser.displayName}) küldése a ProcessBuilder-nek.`)
-                let pb = new ProcessBuilder(serv, versionData, authUser, remote.app.getVersion())
+                let pb = new ProcessBuilder(serv, versionData, forgeData, authUser, remote.app.getVersion())
                 setLaunchDetails('Játék indítása...')
 
                 // Attach a temporary listener to the client output.
