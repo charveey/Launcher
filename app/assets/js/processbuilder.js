@@ -310,7 +310,7 @@ class ProcessBuilder {
         args.push(this.versionData.mainClass)
 
         // Forge Arguments
-        //args = args.concat(this._resolveForgeArgs())
+        args = args.concat(this._resolveForgeArgs())
 
         return args
     }
@@ -336,7 +336,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=ElectronLauncher')
+            args.push('-Xdock:name=NewHope')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM())
@@ -438,7 +438,7 @@ class ProcessBuilder {
                             val = args[i].replace(argDiscovery, tempNativePath)
                             break
                         case 'launcher_name':
-                            val = args[i].replace(argDiscovery, 'Electron-Launcher')
+                            val = args[i].replace(argDiscovery, 'NewHope')
                             break
                         case 'launcher_version':
                             val = args[i].replace(argDiscovery, this.launcherVersion)

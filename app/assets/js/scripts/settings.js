@@ -428,7 +428,7 @@ function populateAuthAccounts(){
             <div class="col s12 m4">
                 <div class="card hoverable">
                     <div class="card-image">
-                        <img alt="${acc.displayName}" src="https://minotar.net/avatar/${acc.username}?scale=3&default=MHF_Steve&overlay">
+                        <img alt="${acc.displayName}" src="https://newhope.hu/kozpont/api/server/skinImage.php?name=${acc.username}">
                         <span class="card-title">${acc.displayName}</span>
                     </div>
                     <div class="card-action">

@@ -130,7 +130,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').src = `https://minotar.net/avatar/${authUser.username}?scale=3&default=MHF_Steve&overlay`
+            document.getElementById('avatarContainer').src = `https://newhope.hu/kozpont/api/server/skinImage.php?name=${authUser.username}`
         }
     }
     user_text.innerHTML = username
